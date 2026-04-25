@@ -81,7 +81,7 @@ export function Hero() {
             <h1 className="max-w-4xl text-5xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
               Turning Complexity
               <span className="block bg-gradient-to-r from-cyan-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Into Clarity.
+                Profitable Clarity.
               </span>
             </h1>
           </Reveal>
