@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, Menu, Sparkles, X } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
+
+import campeLogo from '../assets/logos/campe-technologies.png';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,6 +17,7 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 18);
     handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -29,17 +32,12 @@ export function Navbar() {
         }`}
       >
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#" className="group flex items-center gap-3">
-            <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 via-blue-500 to-indigo-600 shadow-lg shadow-cyan-500/25">
-              <Sparkles size={19} className="text-white" />
-            </div>
-
-            <div>
-              <p className="text-xl font-black tracking-tight text-white">CampE</p>
-              <p className="-mt-1 text-[10px] uppercase tracking-[0.28em] text-cyan-200/70">
-                Systems Intelligence
-              </p>
-            </div>
+          <a href="#" className="group flex items-center">
+            <img
+              src={campeLogo}
+              alt="CampE Technologies"
+             className="-mt-8 h-30 w-auto object-contain sm:h-50 md:h-123"
+            />
           </a>
 
           <div className="hidden items-center gap-7 lg:flex">
@@ -58,7 +56,10 @@ export function Navbar() {
               className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#07111f] shadow-xl shadow-white/10 transition-all hover:scale-105 hover:bg-cyan-100"
             >
               Book for Consultation
-              <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight
+                size={17}
+                className="transition-transform group-hover:translate-x-1"
+              />
             </a>
           </div>
 
