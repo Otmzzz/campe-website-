@@ -1,10 +1,13 @@
 import {
-  Search,
-  Network,
-  Workflow,
-  Wrench,
+  ArrowRight,
+  CheckCircle2,
   GraduationCap,
   LineChart,
+  Network,
+  Search,
+  ShieldCheck,
+  Workflow,
+  Wrench,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 
@@ -13,38 +16,44 @@ export function Process() {
     {
       icon: Search,
       number: '01',
-      title: 'Understand Pain Points',
-      desc: 'We identify what is slowing the organization down, where confusion happens, and what decisions need better visibility.',
+      title: 'Understand the Pain Points',
+      desc: 'We identify where the organization slows down, where confusion happens, what decisions are delayed, and what information leaders cannot see clearly.',
+      output: 'Pain point map',
     },
     {
       icon: Network,
       number: '02',
-      title: 'Diagnose System Gaps',
-      desc: 'We check workflows, data sources, roles, tools, risks, and operational bottlenecks.',
+      title: 'Diagnose the System Gaps',
+      desc: 'We review workflows, roles, tools, documents, data sources, risks, approvals, and bottlenecks to understand the real operating condition.',
+      output: 'Gap diagnosis',
     },
     {
       icon: Workflow,
       number: '03',
-      title: 'Design Clear Workflow',
-      desc: 'We convert scattered processes into structured flows, responsibilities, dashboards, and control points.',
+      title: 'Design the Execution Flow',
+      desc: 'We convert scattered actions into structured workflows with clear responsibilities, data movement, checkpoints, and escalation paths.',
+      output: 'Workflow blueprint',
     },
     {
       icon: Wrench,
       number: '04',
-      title: 'Deploy Tools & Automation',
-      desc: 'We apply the right mix of AI, analytics, cloud, cybersecurity, and system tools based on actual needs.',
+      title: 'Deploy the Right Tools',
+      desc: 'We apply the right mix of AI, dashboards, cloud, automation, cybersecurity controls, and documentation based on actual business needs.',
+      output: 'Tool deployment plan',
     },
     {
       icon: GraduationCap,
       number: '05',
-      title: 'Train the Team',
-      desc: 'We help users understand the system so execution becomes repeatable, measurable, and practical.',
+      title: 'Train the People',
+      desc: 'We guide users and leaders so the system becomes usable, repeatable, measurable, and easier to maintain after rollout.',
+      output: 'User enablement',
     },
     {
       icon: LineChart,
       number: '06',
-      title: 'Measure & Improve',
-      desc: 'We monitor performance, refine weak points, and continuously improve the system over time.',
+      title: 'Measure and Improve',
+      desc: 'We monitor indicators, refine weak points, improve reports, and help leadership use data for continuous operational improvement.',
+      output: 'Improvement dashboard',
     },
   ];
 
@@ -58,22 +67,41 @@ export function Process() {
 
       <div className="relative z-10 mx-auto max-w-[1440px]">
         <Reveal>
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-5 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-200">
-              CampE Execution Process
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-200">
+              <ShieldCheck size={15} />
+              CampE Execution Method
             </div>
 
-            <h2 className="text-4xl font-black tracking-tight md:text-5xl">
-              From confusion to control
+            <h2 className="text-4xl font-black tracking-tight md:text-5xl lg:text-6xl">
+              From unclear operations
               <span className="block bg-gradient-to-r from-cyan-200 to-blue-200 bg-clip-text text-transparent">
-                in six practical moves.
+                to controlled execution.
               </span>
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/60">
-              We follow a structured process that helps organizations move from
-              unclear operations into measurable, technology-enabled execution.
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/60">
+              Our process is designed to prevent technology from becoming random.
+              We clarify the system first, then select the tools that support the work.
             </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.12}>
+          <div className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-3">
+            {[
+              'Business-first diagnosis',
+              'Workflow before software',
+              'Measurement after deployment',
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white/70"
+              >
+                <CheckCircle2 size={16} className="text-cyan-300" />
+                {item}
+              </div>
+            ))}
           </div>
         </Reveal>
 
@@ -87,11 +115,7 @@ export function Process() {
 
               return (
                 <Reveal key={step.title} delay={index * 0.06}>
-                  <div
-                    className={`relative grid items-center gap-6 lg:grid-cols-2 ${
-                      isRight ? '' : ''
-                    }`}
-                  >
+                  <div className="relative grid items-center gap-6 lg:grid-cols-2">
                     <div className={isRight ? 'lg:col-start-2' : ''}>
                       <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
                         <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-cyan-300/10 blur-2xl transition group-hover:bg-cyan-300/20" />
@@ -113,12 +137,15 @@ export function Process() {
                         <p className="mt-4 leading-7 text-white/60">
                           {step.desc}
                         </p>
+
+                        <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">
+                          Output: {step.output}
+                          <ArrowRight size={15} />
+                        </div>
                       </div>
                     </div>
 
-                    <div
-                      className={`absolute left-1/2 top-1/2 hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/40 bg-cyan-300 shadow-[0_0_28px_rgba(103,232,249,0.8)] lg:block`}
-                    />
+                    <div className="absolute left-1/2 top-1/2 hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/40 bg-cyan-300 shadow-[0_0_28px_rgba(103,232,249,0.8)] lg:block" />
                   </div>
                 </Reveal>
               );

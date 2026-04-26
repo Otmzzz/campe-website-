@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, Sparkles, X } from 'lucide-react';
 
 import campeLogo from '../assets/logos/campe-technologies.png';
 
@@ -23,20 +23,37 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
+    <nav className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
       <div
-        className={`mx-auto max-w-[1440px] rounded-full border transition-all duration-500 ${
+        className={`mx-auto max-w-[1440px] rounded-[2rem] border transition-all duration-500 sm:rounded-full ${
           isScrolled
-            ? 'border-white/10 bg-[#07111f]/80 shadow-2xl shadow-black/30 backdrop-blur-2xl'
+            ? 'border-white/10 bg-[#07111f]/85 shadow-2xl shadow-black/30 backdrop-blur-2xl'
             : 'border-white/10 bg-white/[0.04] backdrop-blur-xl'
         }`}
       >
-        <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#" className="group flex items-center">
+        <div className="flex h-20 items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+          {/* MOBILE BRAND */}
+          <a href="#" className="flex items-center gap-3 lg:hidden">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 via-blue-500 to-indigo-600 shadow-lg shadow-cyan-500/25">
+              <Sparkles size={19} className="text-white" />
+            </div>
+
+            <div className="leading-none">
+              <p className="text-xl font-black tracking-tight text-white">
+                CampE
+              </p>
+              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.22em] text-cyan-200/80">
+                Systems Intelligence
+              </p>
+            </div>
+          </a>
+
+          {/* DESKTOP BRAND */}
+          <a href="#" className="hidden items-center lg:flex">
             <img
               src={campeLogo}
               alt="CampE Technologies"
-             className="-mt-8 h-30 w-auto object-contain sm:h-50 md:h-123"
+              className="-translate-y-2 h-24 w-auto object-contain"
             />
           </a>
 
@@ -64,11 +81,11 @@ export function Navbar() {
           </div>
 
           <button
-            className="rounded-full border border-white/10 bg-white/10 p-2 text-white backdrop-blur-xl lg:hidden"
+            className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-white shadow-lg backdrop-blur-xl lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
@@ -79,7 +96,7 @@ export function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/10 hover:text-cyan-200"
+                className="block rounded-2xl px-4 py-3 text-base font-semibold text-white/80 hover:bg-white/10 hover:text-cyan-200"
               >
                 {item.label}
               </a>
@@ -88,7 +105,7 @@ export function Navbar() {
             <a
               href="#finalcta"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-3 flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-[#07111f]"
+              className="mt-3 flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-black text-[#07111f]"
             >
               Book for Consultation
               <ArrowRight size={17} />
