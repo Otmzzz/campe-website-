@@ -6,6 +6,7 @@ import {
   Server,
   CheckCircle2,
   Sparkles,
+  Facebook,
 } from 'lucide-react';
 
 export function TrustSection() {
@@ -25,12 +26,10 @@ export function TrustSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-b border-slate-200 bg-white py-1">
-      {/* Soft glow */}
+    <section className="relative overflow-hidden border-b border-slate-200 bg-white py-20">
       <div className="absolute left-1/2 top-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-cyan-100 blur-[110px]" />
 
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-12">
-        {/* Header */}
         <div className="mb-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-600">
             <Sparkles size={15} className="text-cyan-500" />
@@ -43,7 +42,6 @@ export function TrustSection() {
           </p>
         </div>
 
-        {/* Capability cards */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {capabilities.map((item, index) => (
             <div
@@ -61,7 +59,6 @@ export function TrustSection() {
           ))}
         </div>
 
-        {/* Trust strip */}
         <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 px-6 py-5">
           <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-8">
             {trustItems.map((item) => (
@@ -74,6 +71,18 @@ export function TrustSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://www.facebook.com/campecomputing"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#1877F2] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+          >
+            <Facebook size={18} />
+            Visit Facebook Page
+          </a>
         </div>
       </div>
     </section>

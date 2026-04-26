@@ -6,13 +6,14 @@ import {
   Phone,
   Building2,
   User,
+  MessageCircle,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function FinalCTA() {
   const benefits = [
-    '30-minute discovery consultation',
-    'No obligation initial discussion',
+    '30-minute discovery discussion',
+    'No obligation initial conversation',
     'Systems, AI, dashboards, cybersecurity',
     'Clear next-step recommendations',
   ];
@@ -26,11 +27,11 @@ export function FinalCTA() {
       <div className="absolute right-10 bottom-10 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-        {/* LEFT SIDE */}
         <Reveal>
           <div>
-            <div className="mb-5 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-200">
-              Book Consultation
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-200">
+              <MessageCircle size={16} />
+              Start a Conversation
             </div>
 
             <h2 className="text-4xl font-black tracking-tight md:text-5xl">
@@ -41,9 +42,8 @@ export function FinalCTA() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-white/60">
-              If your business has workflow confusion, reporting gaps,
-              scaling issues, or outdated systems — CampE can help structure
-              the next move.
+              If your business has workflow confusion, reporting gaps, scaling
+              issues, or outdated systems — CampE can help structure the next move.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -69,12 +69,9 @@ export function FinalCTA() {
           </div>
         </Reveal>
 
-        {/* RIGHT SIDE FORM */}
         <Reveal delay={0.12}>
           <div className="rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-xl md:p-8">
-            <h3 className="text-3xl font-black text-white">
-              Request a Consultation
-            </h3>
+            <h3 className="text-3xl font-black text-white">Send an Inquiry</h3>
 
             <p className="mt-3 text-white/55">
               Tell us a little about your needs.
@@ -170,7 +167,7 @@ export function FinalCTA() {
                 type="button"
                 className="group flex w-full items-center justify-center gap-2 rounded-full bg-cyan-300 px-8 py-4 font-bold text-[#07111f] shadow-2xl shadow-cyan-400/20 transition-all hover:scale-[1.02] hover:bg-white"
               >
-                Submit Request
+                Send Inquiry
                 <ArrowRight
                   size={18}
                   className="transition-transform group-hover:translate-x-1"

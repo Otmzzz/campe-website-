@@ -5,6 +5,7 @@ import {
   Gauge,
   LockKeyhole,
   Network,
+  ArrowRight,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 
@@ -79,6 +80,19 @@ export function WhyCampE() {
                   {item}
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="#solutions"
+                className="group inline-flex items-center gap-2 rounded-full border border-cyan-300/30 px-6 py-3 text-sm font-bold text-cyan-100 transition-all hover:bg-cyan-300 hover:text-[#07111f]"
+              >
+                Explore Solutions
+                <ArrowRight
+                  size={17}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </a>
             </div>
           </div>
         </Reveal>

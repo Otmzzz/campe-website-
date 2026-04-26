@@ -2,17 +2,64 @@
 @import './tailwind.css';
 @import './theme.css';
 
+/* Root */
+:root {
+  color-scheme: dark;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Better text rendering */
+/* Universal box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Premium body rendering */
 body {
+  margin: 0;
+  padding: 0;
+  background: #07111f;
+  color: #ffffff;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* Better section rendering */
+section {
+  position: relative;
+}
+
+/* Better links + buttons */
+a,
+button {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Hover polish */
+a:hover,
+button:hover {
+  will-change: transform;
+}
+
+/* Inputs cleaner */
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 /* Selection highlight */
@@ -21,13 +68,13 @@ body {
   color: #07111f;
 }
 
-/* Scrollbar */
+/* Premium scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07111f;
+  background: #030712;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -39,14 +86,39 @@ body {
   background: linear-gradient(to bottom, #1d4ed8, #06b6d4);
 }
 
-/* Images safer */
-img {
+/* Images */
+img,
+svg,
+video,
+canvas {
   max-width: 100%;
   display: block;
 }
 
-/* Buttons smoother */
+/* Prevent weird mobile tap highlight */
+a,
 button,
-a {
-  transition: all 0.25s ease;
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth anchor landing under fixed navbar */
+html {
+  scroll-padding-top: 100px;
+}
+
+/* Respect reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
 }
