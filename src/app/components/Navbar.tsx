@@ -53,7 +53,7 @@ export function Navbar() {
             <img
               src={campeLogo}
               alt="CampE Technologies"
-              className="-translate-y-2 h-24 w-auto object-contain"
+              className="-mt-9 h-30 w-auto object-contain sm:h-70 md:h-140"
             />
           </a>
 
