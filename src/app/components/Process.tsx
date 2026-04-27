@@ -1,7 +1,7 @@
 import {
   ArrowRight,
   CheckCircle2,
-  GraduationCap,
+  Gauge,
   LineChart,
   Network,
   Search,
@@ -16,142 +16,163 @@ export function Process() {
     {
       icon: Search,
       number: '01',
-      title: 'Understand the Pain Points',
-      desc: 'We identify where the organization slows down, where confusion happens, what decisions are delayed, and what information leaders cannot see clearly.',
+      title: 'Diagnose',
+      desc: 'We identify where work slows down, where decisions are delayed, and what leadership cannot see clearly.',
       output: 'Pain point map',
     },
     {
       icon: Network,
       number: '02',
-      title: 'Diagnose the System Gaps',
-      desc: 'We review workflows, roles, tools, documents, data sources, risks, approvals, and bottlenecks to understand the real operating condition.',
-      output: 'Gap diagnosis',
+      title: 'Structure',
+      desc: 'We map workflows, roles, handoffs, approvals, data sources, risks, and bottlenecks into one operating picture.',
+      output: 'System gap map',
     },
     {
       icon: Workflow,
       number: '03',
-      title: 'Design the Execution Flow',
-      desc: 'We convert scattered actions into structured workflows with clear responsibilities, data movement, checkpoints, and escalation paths.',
-      output: 'Workflow blueprint',
+      title: 'Design',
+      desc: 'We turn scattered actions into clear workflows with responsibilities, checkpoints, data movement, and escalation paths.',
+      output: 'Execution blueprint',
     },
     {
       icon: Wrench,
       number: '04',
-      title: 'Deploy the Right Tools',
-      desc: 'We apply the right mix of AI, dashboards, cloud, automation, cybersecurity controls, and documentation based on actual business needs.',
-      output: 'Tool deployment plan',
+      title: 'Implement',
+      desc: 'We apply the right mix of dashboards, AI workflows, cloud, automation, documentation, and control systems.',
+      output: 'Deployment plan',
     },
     {
-      icon: GraduationCap,
+      icon: ShieldCheck,
       number: '05',
-      title: 'Train the People',
-      desc: 'We guide users and leaders so the system becomes usable, repeatable, measurable, and easier to maintain after rollout.',
+      title: 'Stabilize',
+      desc: 'We help users adopt the system, verify usability, document the process, and reduce operational dependency.',
       output: 'User enablement',
     },
     {
       icon: LineChart,
       number: '06',
-      title: 'Measure and Improve',
-      desc: 'We monitor indicators, refine weak points, improve reports, and help leadership use data for continuous operational improvement.',
+      title: 'Measure',
+      desc: 'We monitor indicators, refine weak points, improve reports, and help leadership use data for continuous improvement.',
       output: 'Improvement dashboard',
     },
+  ];
+
+  const principles = [
+    'Business-first diagnosis',
+    'Workflow before software',
+    'Controls before scale',
+    'Measurement after rollout',
   ];
 
   return (
     <section
       id="process"
-      className="relative overflow-hidden bg-gradient-to-b from-[#07111f] via-[#0b1728] to-[#07111f] px-6 py-28 text-white lg:px-12"
+      className="relative overflow-hidden bg-[#07111f] px-5 py-24 text-white sm:px-8 lg:px-10 lg:py-32"
     >
-      <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="absolute bottom-10 left-10 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl" />
+      <div className="absolute bottom-10 left-[-120px] h-[380px] w-[380px] rounded-full bg-blue-500/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-[1440px]">
+      <div className="relative z-10 mx-auto max-w-[1280px]">
         <Reveal>
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-200">
-              <ShieldCheck size={15} />
-              CampE Execution Method
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">
+              <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
+                CampE Execution Method
+              </span>
             </div>
 
-            <h2 className="text-4xl font-black tracking-tight md:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-semibold tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.55rem] lg:leading-[1.05]">
               From unclear operations
-              <span className="block bg-gradient-to-r from-cyan-200 to-blue-200 bg-clip-text text-transparent">
-                to controlled execution.
-              </span>
+              <span className="block text-white/55">to controlled execution.</span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/60">
-              Our process is designed to prevent technology from becoming random.
-              We clarify the system first, then select the tools that support the work.
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
+              We clarify the system before recommending tools, so every workflow,
+              dashboard, automation, and control has a clear business reason.
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-3">
-            {[
-              'Business-first diagnosis',
-              'Workflow before software',
-              'Measurement after deployment',
-            ].map((item) => (
+          <div className="mx-auto mt-12 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {principles.map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white/70"
+                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-white/65"
               >
-                <CheckCircle2 size={16} className="text-cyan-300" />
+                <CheckCircle2 size={16} className="text-cyan-200" />
                 {item}
               </div>
             ))}
           </div>
         </Reveal>
 
-        <div className="relative mt-20">
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-300/30 to-transparent lg:block" />
+        <div className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
 
-          <div className="space-y-8">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              const isRight = index % 2 !== 0;
+            return (
+              <Reveal key={step.title} delay={index * 0.05}>
+                <div className="group relative h-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.065] sm:p-7">
+                  <div className="absolute right-[-70px] top-[-70px] h-44 w-44 rounded-full bg-cyan-300/8 blur-3xl transition group-hover:bg-cyan-300/14" />
 
-              return (
-                <Reveal key={step.title} delay={index * 0.06}>
-                  <div className="relative grid items-center gap-6 lg:grid-cols-2">
-                    <div className={isRight ? 'lg:col-start-2' : ''}>
-                      <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
-                        <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-cyan-300/10 blur-2xl transition group-hover:bg-cyan-300/20" />
-
-                        <div className="relative flex items-start justify-between gap-5">
-                          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 to-blue-500 shadow-lg shadow-cyan-500/20">
-                            <Icon size={25} className="text-white" />
-                          </div>
-
-                          <span className="text-5xl font-black text-white/10">
-                            {step.number}
-                          </span>
-                        </div>
-
-                        <h3 className="mt-7 text-2xl font-black text-white">
-                          {step.title}
-                        </h3>
-
-                        <p className="mt-4 leading-7 text-white/60">
-                          {step.desc}
-                        </p>
-
-                        <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">
-                          Output: {step.output}
-                          <ArrowRight size={15} />
-                        </div>
-                      </div>
+                  <div className="relative flex items-start justify-between gap-5">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
+                      <Icon size={22} className="text-cyan-200" />
                     </div>
 
-                    <div className="absolute left-1/2 top-1/2 hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/40 bg-cyan-300 shadow-[0_0_28px_rgba(103,232,249,0.8)] lg:block" />
+                    <span className="text-4xl font-semibold tracking-[-0.04em] text-white/12">
+                      {step.number}
+                    </span>
                   </div>
-                </Reveal>
-              );
-            })}
-          </div>
+
+                  <h3 className="mt-7 text-2xl font-semibold tracking-[-0.02em] text-white">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-4 min-h-[112px] text-sm leading-7 text-white/55 sm:text-[15px]">
+                    {step.desc}
+                  </p>
+
+                  <div className="mt-6 rounded-2xl border border-cyan-200/10 bg-cyan-200/[0.06] p-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-100/55">
+                      Output
+                    </p>
+                    <p className="mt-2 flex items-center justify-between gap-3 text-sm font-medium text-white/75">
+                      {step.output}
+                      <ArrowRight size={15} className="text-cyan-200" />
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
+
+        <Reveal delay={0.18}>
+          <div className="mt-14 grid gap-5 rounded-[1.8rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl lg:grid-cols-[0.8fr_1.2fr] lg:p-8">
+            <div className="flex items-center gap-4">
+              <div className="flex h-13 w-13 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
+                <Gauge size={24} className="text-cyan-200" />
+              </div>
+
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-200/70">
+                  Method Discipline
+                </p>
+                <h3 className="mt-1 text-2xl font-semibold text-white">
+                  Tools follow the operating logic.
+                </h3>
+              </div>
+            </div>
+
+            <p className="text-base leading-8 text-white/62">
+              CampE does not force a platform into the organization. We first
+              define how the business should operate, then align the technology,
+              dashboards, automation, controls, and training around that structure.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Reveal } from './Reveal';
 import { AnimatedCounter } from './AnimatedCounter';
@@ -10,16 +10,16 @@ import powerBiLogo from '../assets/logos/powerbi.svg';
 
 export function Hero() {
   const stats = [
-    { value: 95, suffix: '%', label: 'Process clarity' },
-    { value: 24, suffix: '/7', label: 'Systems mindset' },
-    { value: 3, suffix: 'x', label: 'Faster visibility' },
+    { value: 95, suffix: '%', label: 'Clearer workflows' },
+    { value: 24, suffix: '/7', label: 'Operational visibility' },
+    { value: 3, suffix: 'x', label: 'Faster decisions' },
   ];
 
   const logos = [
-    { src: powerBiLogo, label: 'Power BI', position: 'left-[8%] top-[8%]', delay: 0 },
-    { src: azureLogo, label: 'Microsoft Azure', position: 'right-[2%] top-[20%]', delay: 0.4 },
-    { src: awsLogo, label: 'AWS', position: 'left-[0%] bottom-[20%]', delay: 0.8 },
-    { src: fortinetLogo, label: 'Fortinet', position: 'right-[8%] bottom-[12%]', delay: 1.2 },
+    { src: powerBiLogo, label: 'Power BI', position: 'left-[6%] top-[10%]', delay: 0 },
+    { src: azureLogo, label: 'Microsoft Azure', position: 'right-[4%] top-[22%]', delay: 0.4 },
+    { src: awsLogo, label: 'AWS', position: 'left-[2%] bottom-[22%]', delay: 0.8 },
+    { src: fortinetLogo, label: 'Fortinet', position: 'right-[10%] bottom-[14%]', delay: 1.2 },
   ];
 
   return (
@@ -27,92 +27,89 @@ export function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#07111f] pt-32 text-white sm:pt-36 lg:pt-28"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.22),transparent_30%),radial-gradient(circle_at_80%_50%,rgba(59,130,246,0.2),transparent_35%),linear-gradient(135deg,#07111f,#0b1b32,#102747)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#07111f,#0b1728,#10243d)]" />
 
-      <div className="absolute inset-0 opacity-[0.08]">
-        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:42px_42px] sm:bg-[size:48px_48px]" />
+      <div className="absolute inset-0 opacity-[0.05]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:56px_56px]" />
       </div>
 
-      <motion.div
-        className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-3xl sm:h-[700px] sm:w-[700px]"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.55, 0.35] }}
-        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-cyan-300/10 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full bg-blue-500/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-96px)] max-w-[1440px] items-center gap-10 px-5 pb-14 sm:px-8 sm:pb-16 lg:grid-cols-2 lg:gap-14 lg:px-14">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-96px)] max-w-[1280px] items-center gap-12 px-5 pb-16 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <div className="text-center lg:text-left">
           <Reveal>
-            <div className="mx-auto mb-6 inline-flex max-w-[92vw] items-center gap-2 rounded-full border border-cyan-300/20 bg-white/10 px-4 py-2 shadow-xl backdrop-blur-xl lg:mx-0">
-              <Sparkles size={16} className="shrink-0 text-cyan-200" />
-              <span className="text-xs font-semibold tracking-wide text-white/85 sm:text-sm">
-                Systems Intelligence for Modern Organizations
+            <div className="mx-auto mb-7 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 backdrop-blur-xl lg:mx-0">
+              <span className="text-xs font-medium tracking-[0.18em] text-white/70">
+                SYSTEMS INTELLIGENCE CONSULTING
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mx-auto max-w-5xl text-[3.25rem] font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:mx-0 lg:text-8xl">
-              Turning
-              <span className="block">Complexity</span>
-              <span className="block bg-gradient-to-r from-cyan-200 via-sky-200 to-white bg-clip-text text-transparent">
-                Into Profitable
-              </span>
-              <span className="block text-cyan-100">Clarity.</span>
+            <h1 className="mx-auto max-w-4xl text-[2.85rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-[5.35rem]">
+              Turning business complexity into structured clarity.
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg md:text-xl lg:mx-0">
-              CampE helps organizations modernize operations through structured systems,
-              applied AI, cybersecurity readiness, analytics dashboards, and
-              execution-focused consulting.
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg lg:mx-0">
+              CampE helps organizations design smarter systems, improve operational
+              control, build decision dashboards, and modernize workflows without
+              losing human direction.
             </p>
           </Reveal>
 
           <Reveal delay={0.24}>
-            <div className="mt-8 flex justify-center lg:justify-start">
+            <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="#solutions"
-                className="group relative inline-flex w-full max-w-[320px] items-center justify-center gap-3 overflow-hidden rounded-full bg-cyan-300 px-8 py-4 text-base font-black text-[#07111f] shadow-2xl shadow-cyan-400/30 transition-all duration-300 hover:scale-105 hover:bg-white sm:w-auto"
+                className="group inline-flex w-full max-w-[300px] items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#07111f] shadow-xl shadow-black/20 transition hover:bg-cyan-50 sm:w-auto"
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/60 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                <span className="relative">Explore Solutions</span>
-                <ArrowRight size={20} className="relative transition-transform group-hover:translate-x-1" />
+                Explore Solutions
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </a>
+
+              <a
+                href="#why-campe"
+                className="inline-flex w-full max-w-[300px] items-center justify-center rounded-full border border-white/12 bg-white/[0.04] px-7 py-4 text-sm font-semibold text-white/75 transition hover:bg-white/[0.08] hover:text-white sm:w-auto"
+              >
+                Why CampE
               </a>
             </div>
           </Reveal>
 
           <Reveal delay={0.32}>
-            <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.07] px-4 py-2 text-sm text-white/75 backdrop-blur-xl">
-                <ShieldCheck size={16} className="text-cyan-200" />
+            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/70">
+                <ShieldCheck size={15} className="text-cyan-200" />
                 Governance-ready
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.07] px-4 py-2 text-sm text-white/75 backdrop-blur-xl">
-                <Zap size={16} className="text-cyan-200" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/70">
+                <Zap size={15} className="text-cyan-200" />
                 Execution-focused
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.07] px-4 py-2 text-sm text-white/75 backdrop-blur-xl">
-                <CheckCircle2 size={16} className="text-cyan-200" />
-                Built for clarity
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/70">
+                <CheckCircle2 size={15} className="text-cyan-200" />
+                Built for control
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.4}>
-            <div className="mt-9 grid grid-cols-3 gap-3 sm:gap-4">
+            <div className="mt-10 grid grid-cols-3 gap-3 sm:max-w-xl sm:gap-4 lg:max-w-none">
               {stats.map((item) => (
                 <motion.div
                   key={item.label}
-                  whileHover={{ y: -8, scale: 1.03 }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 shadow-xl backdrop-blur-xl sm:rounded-3xl sm:p-5"
+                  whileHover={{ y: -4 }}
+                  className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 backdrop-blur-xl sm:p-5"
                 >
-                  <p className="text-2xl font-black text-white sm:text-3xl">
+                  <p className="text-2xl font-semibold text-white sm:text-3xl">
                     <AnimatedCounter value={item.value} suffix={item.suffix} />
                   </p>
-                  <p className="mt-2 text-[11px] leading-4 text-white/55 sm:text-sm">
+                  <p className="mt-2 text-[11px] leading-4 text-white/50 sm:text-sm">
                     {item.label}
                   </p>
                 </motion.div>
@@ -122,35 +119,28 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.18}>
-          <div className="relative mx-auto hidden h-[430px] w-full max-w-xl sm:block sm:h-[520px] lg:h-[620px] lg:max-w-2xl">
-            <motion.div
-              className="absolute inset-10 rounded-full border border-cyan-200/10"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 42, repeat: Infinity, ease: 'linear' }}
-            />
+          <div className="relative mx-auto hidden h-[500px] w-full max-w-xl sm:block lg:h-[600px]">
+            <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+            <div className="absolute left-1/2 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
 
             <motion.div
-              className="absolute inset-20 rounded-full border border-blue-200/10"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 55, repeat: Infinity, ease: 'linear' }}
-            />
-
-            <motion.div
-              className="absolute left-1/2 top-1/2 z-10 flex h-64 w-64 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-white/[0.09] text-center shadow-2xl backdrop-blur-2xl sm:h-72 sm:w-72 lg:h-80 lg:w-80"
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute left-1/2 top-1/2 z-10 flex h-72 w-72 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[2.5rem] border border-white/10 bg-white/[0.07] text-center shadow-2xl shadow-black/30 backdrop-blur-2xl lg:h-80 lg:w-80"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div className="px-8">
-                <p className="text-xs font-black tracking-[0.45em] text-cyan-200">
+                <p className="text-xs font-semibold tracking-[0.38em] text-cyan-200">
                   CAMPE
                 </p>
-                <h3 className="mt-4 text-3xl font-black leading-tight text-white sm:text-3xl lg:text-4xl">
-                  Technology
-                  <span className="block">Ecosystem</span>
+
+                <h3 className="mt-4 text-3xl font-semibold leading-tight text-white lg:text-4xl">
+                  Systems
+                  <span className="block">Control Layer</span>
                 </h3>
-                <p className="mx-auto mt-4 max-w-[230px] text-sm leading-6 text-white/55">
-                  Cloud, analytics, security, and systems connected into one
-                  clear execution layer.
+
+                <p className="mx-auto mt-5 max-w-[230px] text-sm leading-6 text-white/55">
+                  Analytics, cloud, cybersecurity, and workflow design aligned
+                  into one operating view.
                 </p>
               </div>
             </motion.div>
@@ -158,15 +148,15 @@ export function Hero() {
             {logos.map((logo) => (
               <motion.div
                 key={logo.label}
-                className={`absolute z-20 flex h-16 w-28 items-center justify-center rounded-[1.4rem] bg-white/95 p-3 shadow-2xl backdrop-blur-xl sm:h-20 sm:w-32 lg:h-24 lg:w-40 ${logo.position}`}
-                animate={{ y: [0, -18, 0], rotate: [0, 1.5, 0] }}
+                className={`absolute z-20 flex h-16 w-28 items-center justify-center rounded-[1.25rem] border border-white/10 bg-white/95 p-3 shadow-2xl shadow-black/25 sm:h-20 sm:w-32 lg:h-22 lg:w-36 ${logo.position}`}
+                animate={{ y: [0, -10, 0] }}
                 transition={{
-                  duration: 5,
+                  duration: 6,
                   repeat: Infinity,
                   ease: 'easeInOut',
                   delay: logo.delay,
                 }}
-                whileHover={{ scale: 1.12, rotate: 0 }}
+                whileHover={{ scale: 1.06 }}
               >
                 <img
                   src={logo.src}
@@ -175,24 +165,6 @@ export function Hero() {
                 />
               </motion.div>
             ))}
-
-            <motion.div
-              className="absolute left-[18%] top-[42%] h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_28px_rgba(103,232,249,1)]"
-              animate={{ scale: [1, 1.8, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            />
-
-            <motion.div
-              className="absolute right-[20%] top-[54%] h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_24px_rgba(147,197,253,1)]"
-              animate={{ scale: [1, 2, 1], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            />
-
-            <motion.div
-              className="absolute bottom-[30%] left-[48%] h-2 w-2 rounded-full bg-cyan-100 shadow-[0_0_24px_rgba(165,243,252,1)]"
-              animate={{ scale: [1, 1.7, 1], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 2.8, repeat: Infinity }}
-            />
           </div>
         </Reveal>
       </div>
