@@ -109,8 +109,8 @@ export function Industries() {
               <Reveal key={item.title} delay={index * 0.04}>
                 <div className="group flex h-full flex-col rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl">
                   <div className="mb-7 flex items-start justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#07111f] text-cyan-200 shadow-lg shadow-slate-300/40">
-                      <Icon size={22} />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#07111f] shadow-sm">
+                      <Icon size={17} />
                     </div>
 
                     <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-slate-400">
@@ -152,7 +152,7 @@ export function Industries() {
                   >
                     Discuss this environment
                     <ArrowRight
-                      size={16}
+                      size={15}
                       className="transition-transform group-hover:translate-x-0.5"
                     />
                   </a>

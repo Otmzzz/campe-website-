@@ -78,7 +78,7 @@ export function WhyCampE() {
                   key={item}
                   className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-600 shadow-sm"
                 >
-                  <BadgeCheck size={16} className="text-cyan-600" />
+                  <BadgeCheck size={14} className="text-slate-500" />
                   {item}
                 </div>
               ))}
@@ -90,7 +90,7 @@ export function WhyCampE() {
             >
               Explore Solutions
               <ArrowRight
-                size={16}
+                size={15}
                 className="transition-transform group-hover:translate-x-0.5"
               />
             </a>
@@ -103,8 +103,8 @@ export function WhyCampE() {
 
             <div className="relative overflow-hidden rounded-[2.25rem] border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/70 sm:p-7 lg:p-8">
               <div className="mb-7 flex items-center gap-4">
-                <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[#07111f] text-cyan-200">
-                  <Building2 size={24} />
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#07111f] shadow-sm">
+                  <Building2 size={18} />
                 </div>
 
                 <div>
@@ -124,8 +124,8 @@ export function WhyCampE() {
                   return (
                     <Reveal key={point.value} delay={index * 0.05}>
                       <div className="group min-h-[190px] rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg">
-                        <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-cyan-700 shadow-sm">
-                          <Icon size={20} />
+                        <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#07111f] shadow-sm">
+                          <Icon size={17} />
                         </div>
 
                         <h4 className="text-lg font-semibold text-[#07111f]">

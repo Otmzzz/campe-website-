@@ -98,8 +98,8 @@ export function Solutions() {
                   <div className="absolute right-[-70px] top-[-70px] h-44 w-44 rounded-full bg-cyan-100 blur-3xl transition group-hover:bg-cyan-200/70" />
 
                   <div className="relative flex items-start justify-between gap-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#07111f] text-cyan-200 shadow-lg shadow-slate-300/40">
-                      <Icon size={22} />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#07111f] shadow-sm">
+                      <Icon size={17} />
                     </div>
 
                     <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-slate-400">
@@ -121,7 +121,7 @@ export function Solutions() {
                         key={point}
                         className="flex items-center gap-3 text-sm text-slate-600"
                       >
-                        <CheckCircle2 size={15} className="text-cyan-600" />
+                        <CheckCircle2 size={14} className="text-slate-500" />
                         {point}
                       </div>
                     ))}
@@ -133,7 +133,7 @@ export function Solutions() {
                   >
                     Discuss this service
                     <ArrowRight
-                      size={16}
+                      size={15}
                       className="transition-transform group-hover:translate-x-0.5"
                     />
                   </a>

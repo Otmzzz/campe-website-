@@ -1,59 +1,40 @@
 import {
   ArrowRight,
   CheckCircle2,
+  Compass,
   Gauge,
   LineChart,
   Network,
-  Search,
   ShieldCheck,
   Workflow,
-  Wrench,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function Process() {
-  const steps = [
+  const phases = [
     {
-      icon: Search,
-      number: '01',
-      title: 'Diagnose',
-      desc: 'We identify where work slows down, where decisions are delayed, and what leadership cannot see clearly.',
-      output: 'Pain point map',
-    },
-    {
-      icon: Network,
-      number: '02',
-      title: 'Structure',
-      desc: 'We map workflows, roles, handoffs, approvals, data sources, risks, and bottlenecks into one operating picture.',
-      output: 'System gap map',
+      icon: Compass,
+      phase: 'Phase 01',
+      title: 'Clarify',
+      subtitle: 'Understand what is actually happening.',
+      desc: 'We diagnose pain points, workflow gaps, scattered data, unclear ownership, and decision delays before recommending any tool.',
+      steps: ['Pain point discovery', 'Workflow mapping', 'Role and handoff review'],
     },
     {
       icon: Workflow,
-      number: '03',
-      title: 'Design',
-      desc: 'We turn scattered actions into clear workflows with responsibilities, checkpoints, data movement, and escalation paths.',
-      output: 'Execution blueprint',
-    },
-    {
-      icon: Wrench,
-      number: '04',
-      title: 'Implement',
-      desc: 'We apply the right mix of dashboards, AI workflows, cloud, automation, documentation, and control systems.',
-      output: 'Deployment plan',
-    },
-    {
-      icon: ShieldCheck,
-      number: '05',
-      title: 'Stabilize',
-      desc: 'We help users adopt the system, verify usability, document the process, and reduce operational dependency.',
-      output: 'User enablement',
+      phase: 'Phase 02',
+      title: 'Build',
+      subtitle: 'Design the operating system.',
+      desc: 'We structure workflows, dashboards, automation logic, AI use cases, and system controls around the real business environment.',
+      steps: ['Execution blueprint', 'Dashboard and data design', 'Automation and AI workflow plan'],
     },
     {
       icon: LineChart,
-      number: '06',
-      title: 'Measure',
-      desc: 'We monitor indicators, refine weak points, improve reports, and help leadership use data for continuous improvement.',
-      output: 'Improvement dashboard',
+      phase: 'Phase 03',
+      title: 'Scale',
+      subtitle: 'Make progress measurable.',
+      desc: 'We help stabilize usage, define indicators, improve reporting, reduce dependency, and create better leadership visibility.',
+      steps: ['User enablement', 'KPI monitoring', 'Continuous improvement loop'],
     },
   ];
 
@@ -83,20 +64,19 @@ export function Process() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 backdrop-blur-xl">
               <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
-                CampE Execution Method
+                CampE Method
               </span>
             </div>
 
             <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.65rem] lg:leading-[1.05]">
-              From unclear operations
-              <span className="block text-white/55">
-                to controlled execution.
-              </span>
+              Clarify. Build.
+              <span className="block text-white/55">Scale with control.</span>
             </h2>
 
             <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
-              We clarify the system before recommending tools, so every workflow,
-              dashboard, automation, and control has a clear business reason.
+              CampE follows a practical three-phase method that turns scattered
+              operations into structured workflows, measurable dashboards, and
+              controlled execution.
             </p>
           </div>
         </Reveal>
@@ -106,63 +86,74 @@ export function Process() {
             {principles.map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-white/65 backdrop-blur-xl"
+                className="flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-white/65 backdrop-blur-xl"
               >
-                <CheckCircle2 size={16} className="text-cyan-200" />
+                <CheckCircle2 size={14} className="text-cyan-200/80" />
                 {item}
               </div>
             ))}
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+        <div className="relative mt-16">
+          <div className="absolute left-0 right-0 top-[72px] hidden h-px bg-gradient-to-r from-transparent via-cyan-200/25 to-transparent lg:block" />
 
-            return (
-              <Reveal key={step.title} delay={index * 0.05}>
-                <div className="group relative h-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.065] sm:p-7">
-                  <div className="absolute right-[-70px] top-[-70px] h-44 w-44 rounded-full bg-cyan-300/8 blur-3xl transition group-hover:bg-cyan-300/14" />
+          <div className="grid gap-5 lg:grid-cols-3">
+            {phases.map((phase, index) => {
+              const Icon = phase.icon;
 
-                  <div className="relative flex items-start justify-between gap-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
-                      <Icon size={22} className="text-cyan-200" />
+              return (
+                <Reveal key={phase.title} delay={index * 0.08}>
+                  <div className="group relative h-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.065] sm:p-7">
+                    <div className="absolute right-[-80px] top-[-80px] h-48 w-48 rounded-full bg-cyan-300/8 blur-3xl transition group-hover:bg-cyan-300/14" />
+
+                    <div className="relative mb-8 flex items-start justify-between gap-5">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-cyan-100 shadow-sm">
+                        <Icon size={18} />
+                      </div>
+
+                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+                        {phase.phase}
+                      </span>
                     </div>
 
-                    <span className="text-4xl font-semibold tracking-[-0.04em] text-white/12">
-                      {step.number}
-                    </span>
+                    <div className="relative">
+                      <h3 className="text-4xl font-semibold tracking-[-0.04em] text-white">
+                        {phase.title}
+                      </h3>
+
+                      <p className="mt-3 text-lg font-medium text-cyan-100/75">
+                        {phase.subtitle}
+                      </p>
+
+                      <p className="mt-5 min-h-[120px] text-sm leading-7 text-white/55 sm:text-[15px]">
+                        {phase.desc}
+                      </p>
+
+                      <div className="mt-7 space-y-3">
+                        {phase.steps.map((step) => (
+                          <div
+                            key={step}
+                            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm text-white/65"
+                          >
+                            <span className="h-1.5 w-1.5 rounded-full bg-cyan-200/70" />
+                            {step}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-
-                  <h3 className="relative mt-7 text-2xl font-semibold tracking-[-0.02em] text-white">
-                    {step.title}
-                  </h3>
-
-                  <p className="relative mt-4 min-h-[112px] text-sm leading-7 text-white/55 sm:text-[15px]">
-                    {step.desc}
-                  </p>
-
-                  <div className="relative mt-6 rounded-2xl border border-cyan-200/10 bg-cyan-200/[0.06] p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-100/55">
-                      Output
-                    </p>
-
-                    <p className="mt-2 flex items-center justify-between gap-3 text-sm font-medium text-white/75">
-                      {step.output}
-                      <ArrowRight size={15} className="text-cyan-200" />
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
 
         <Reveal delay={0.18}>
           <div className="mt-14 grid gap-5 rounded-[1.8rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl lg:grid-cols-[0.8fr_1.2fr] lg:p-8">
             <div className="flex items-center gap-4">
-              <div className="flex h-13 w-13 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
-                <Gauge size={24} className="text-cyan-200" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-cyan-100">
+                <Gauge size={18} />
               </div>
 
               <div>

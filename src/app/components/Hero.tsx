@@ -16,10 +16,10 @@ export function Hero() {
   ];
 
   const logos = [
-    { src: powerBiLogo, label: 'Power BI', position: 'left-[6%] top-[10%]', delay: 0 },
-    { src: azureLogo, label: 'Microsoft Azure', position: 'right-[4%] top-[22%]', delay: 0.4 },
-    { src: awsLogo, label: 'AWS', position: 'left-[2%] bottom-[22%]', delay: 0.8 },
-    { src: fortinetLogo, label: 'Fortinet', position: 'right-[10%] bottom-[14%]', delay: 1.2 },
+    { src: powerBiLogo, label: 'Power BI', position: 'left-[3%] top-[6%] sm:left-[6%] sm:top-[10%]', delay: 0 },
+    { src: azureLogo, label: 'Microsoft Azure', position: 'right-[2%] top-[18%] sm:right-[4%] sm:top-[22%]', delay: 0.4 },
+    { src: awsLogo, label: 'AWS', position: 'left-[2%] bottom-[18%] sm:left-[2%] sm:bottom-[22%]', delay: 0.8 },
+    { src: fortinetLogo, label: 'Fortinet', position: 'right-[5%] bottom-[10%] sm:right-[10%] sm:bottom-[14%]', delay: 1.2 },
   ];
 
   return (
@@ -47,13 +47,13 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mx-auto max-w-4xl text-[2.85rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-[5.35rem]">
+            <h1 className="mx-auto max-w-4xl text-[2.75rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-[5.35rem]">
               Turning business complexity into structured clarity.
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg lg:mx-0">
+            <p className="mx-auto mt-7 max-w-2xl text-justify text-base leading-8 text-white/65 sm:text-lg lg:mx-0">
               CampE helps organizations design smarter systems, improve operational
               control, build decision dashboards, and modernize workflows without
               losing human direction.
@@ -119,26 +119,26 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.18}>
-          <div className="relative mx-auto hidden h-[500px] w-full max-w-xl sm:block lg:h-[600px]">
-            <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-            <div className="absolute left-1/2 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+          <div className="relative mx-auto mt-12 h-[300px] w-full max-w-sm sm:mt-0 sm:h-[500px] sm:max-w-xl lg:h-[600px]">
+            <div className="absolute left-1/2 top-1/2 h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:h-[360px] sm:w-[360px]" />
+            <div className="absolute left-1/2 top-1/2 h-[165px] w-[165px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:h-[250px] sm:w-[250px]" />
 
             <motion.div
-              className="absolute left-1/2 top-1/2 z-10 flex h-72 w-72 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[2.5rem] border border-white/10 bg-white/[0.07] text-center shadow-2xl shadow-black/30 backdrop-blur-2xl lg:h-80 lg:w-80"
+              className="absolute left-1/2 top-1/2 z-10 flex h-44 w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.07] text-center shadow-2xl shadow-black/30 backdrop-blur-2xl sm:h-72 sm:w-72 sm:rounded-[2.5rem] lg:h-80 lg:w-80"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <div className="px-8">
-                <p className="text-xs font-semibold tracking-[0.38em] text-cyan-200">
+              <div className="px-5 sm:px-8">
+                <p className="text-[10px] font-semibold tracking-[0.32em] text-cyan-200 sm:text-xs sm:tracking-[0.38em]">
                   CAMPE
                 </p>
 
-                <h3 className="mt-4 text-3xl font-semibold leading-tight text-white lg:text-4xl">
+                <h3 className="mt-3 text-xl font-semibold leading-tight text-white sm:mt-4 sm:text-3xl lg:text-4xl">
                   Systems
                   <span className="block">Control Layer</span>
                 </h3>
 
-                <p className="mx-auto mt-5 max-w-[230px] text-sm leading-6 text-white/55">
+                <p className="mx-auto mt-3 max-w-[150px] text-[11px] leading-5 text-white/55 sm:mt-5 sm:max-w-[230px] sm:text-sm sm:leading-6">
                   Analytics, cloud, cybersecurity, and workflow design aligned
                   into one operating view.
                 </p>
@@ -148,7 +148,7 @@ export function Hero() {
             {logos.map((logo) => (
               <motion.div
                 key={logo.label}
-                className={`absolute z-20 flex h-16 w-28 items-center justify-center rounded-[1.25rem] border border-white/10 bg-white/95 p-3 shadow-2xl shadow-black/25 sm:h-20 sm:w-32 lg:h-22 lg:w-36 ${logo.position}`}
+                className={`absolute z-20 flex h-12 w-20 items-center justify-center rounded-2xl border border-white/10 bg-white/95 p-2 shadow-2xl shadow-black/25 sm:h-20 sm:w-32 sm:rounded-[1.25rem] sm:p-3 lg:h-22 lg:w-36 ${logo.position}`}
                 animate={{ y: [0, -10, 0] }}
                 transition={{
                   duration: 6,
