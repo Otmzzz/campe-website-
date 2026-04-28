@@ -74,26 +74,26 @@ export function Industries() {
   return (
     <section
       id="industries"
-      className="relative overflow-hidden bg-[#07111f] px-5 py-24 text-white sm:px-8 lg:px-10 lg:py-32"
+      className="relative overflow-hidden bg-white px-5 py-24 text-[#07111f] sm:px-8 lg:px-10 lg:py-32"
     >
-      <div className="absolute left-[-160px] top-24 h-[420px] w-[420px] rounded-full bg-cyan-300/10 blur-3xl" />
-      <div className="absolute right-[-140px] bottom-10 h-[480px] w-[480px] rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute left-[-160px] top-20 h-[420px] w-[420px] rounded-full bg-cyan-100 blur-3xl" />
+      <div className="absolute right-[-140px] bottom-10 h-[460px] w-[460px] rounded-full bg-blue-100 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">
-              <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
+            <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 shadow-sm">
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                 Operating Environments
               </span>
             </div>
 
-            <h2 className="text-4xl font-semibold tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.55rem] lg:leading-[1.05]">
+            <h2 className="text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.55rem] lg:leading-[1.05]">
               Built for real businesses,
-              <span className="block text-white/55">not ideal conditions.</span>
+              <span className="block text-slate-500">not ideal conditions.</span>
             </h2>
 
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
               CampE adapts to how each organization actually works — the people,
               the workflow, the data, the risks, and the decisions leadership
               needs to make.
@@ -107,40 +107,40 @@ export function Industries() {
 
             return (
               <Reveal key={item.title} delay={index * 0.04}>
-                <div className="group flex h-full flex-col rounded-[1.7rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.065]">
+                <div className="group flex h-full flex-col rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl">
                   <div className="mb-7 flex items-start justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
-                      <Icon size={22} className="text-cyan-200" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#07111f] text-cyan-200 shadow-lg shadow-slate-300/40">
+                      <Icon size={22} />
                     </div>
 
-                    <span className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-white/42">
+                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-slate-400">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
 
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-200/60">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-700/65">
                     {item.tag}
                   </p>
 
-                  <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-white">
+                  <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-[#07111f]">
                     {item.title}
                   </h3>
 
                   <div className="mt-5 space-y-4">
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/35">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                         Common Pain
                       </p>
-                      <p className="mt-2 text-sm leading-7 text-white/56">
+                      <p className="mt-2 text-sm leading-7 text-slate-500">
                         {item.pain}
                       </p>
                     </div>
 
-                    <div className="rounded-2xl border border-cyan-200/10 bg-cyan-200/[0.06] p-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-100/55">
+                    <div className="rounded-2xl border border-cyan-100 bg-cyan-50/70 p-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700/65">
                         CampE Outcome
                       </p>
-                      <p className="mt-2 text-sm leading-7 text-white/70">
+                      <p className="mt-2 text-sm leading-7 text-slate-700">
                         {item.outcome}
                       </p>
                     </div>
@@ -148,7 +148,7 @@ export function Industries() {
 
                   <a
                     href="#finalcta"
-                    className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold text-cyan-100/75 transition group-hover:text-white"
+                    className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold text-[#07111f] transition group-hover:text-cyan-700"
                   >
                     Discuss this environment
                     <ArrowRight
@@ -163,8 +163,8 @@ export function Industries() {
         </div>
 
         <Reveal delay={0.2}>
-          <div className="mt-14 rounded-[1.7rem] border border-white/10 bg-white/[0.045] p-6 text-center shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-7">
-            <p className="mx-auto max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
+          <div className="mt-14 rounded-[1.7rem] border border-slate-200 bg-slate-50 p-6 text-center shadow-sm sm:p-7">
+            <p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
               Different industry? CampE can still model the workflow first, then
               design the system around the actual operating environment.
             </p>

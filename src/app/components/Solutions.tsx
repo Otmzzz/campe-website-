@@ -59,28 +59,28 @@ export function Solutions() {
   return (
     <section
       id="solutions"
-      className="relative overflow-hidden bg-[#07111f] px-5 py-24 text-white sm:px-8 lg:px-10 lg:py-32"
+      className="relative overflow-hidden bg-slate-50 px-5 py-24 text-[#07111f] sm:px-8 lg:px-10 lg:py-32"
     >
-      <div className="absolute left-[-140px] top-20 h-[420px] w-[420px] rounded-full bg-cyan-300/10 blur-3xl" />
-      <div className="absolute bottom-[-160px] right-[-120px] h-[480px] w-[480px] rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute left-[-160px] top-24 h-[420px] w-[420px] rounded-full bg-cyan-100 blur-3xl" />
+      <div className="absolute bottom-[-180px] right-[-140px] h-[480px] w-[480px] rounded-full bg-blue-100 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <div>
-              <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">
-                <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
+              <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                   CampE Solutions
                 </span>
               </div>
 
-              <h2 className="max-w-xl text-4xl font-semibold tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.45rem] lg:leading-[1.05]">
+              <h2 className="max-w-xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.45rem] lg:leading-[1.05]">
                 Services built around control,
-                <span className="block text-white/55">not software hype.</span>
+                <span className="block text-slate-500">not software hype.</span>
               </h2>
             </div>
 
-            <p className="max-w-2xl text-base leading-8 text-white/62 sm:text-lg lg:justify-self-end">
+            <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:justify-self-end">
               CampE helps organizations clarify how work should move, what data
               should be captured, who should act, and how leadership should see
               progress before tools are selected.
@@ -94,34 +94,34 @@ export function Solutions() {
 
             return (
               <Reveal key={service.title} delay={index * 0.05}>
-                <div className="group relative h-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.065] sm:p-7">
-                  <div className="absolute right-[-60px] top-[-60px] h-40 w-40 rounded-full bg-cyan-300/8 blur-3xl transition group-hover:bg-cyan-300/14" />
+                <div className="group relative h-full overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl sm:p-7">
+                  <div className="absolute right-[-70px] top-[-70px] h-44 w-44 rounded-full bg-cyan-100 blur-3xl transition group-hover:bg-cyan-200/70" />
 
                   <div className="relative flex items-start justify-between gap-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
-                      <Icon size={22} className="text-cyan-200" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#07111f] text-cyan-200 shadow-lg shadow-slate-300/40">
+                      <Icon size={22} />
                     </div>
 
-                    <span className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-white/45">
+                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-slate-400">
                       {service.eyebrow}
                     </span>
                   </div>
 
-                  <h3 className="mt-7 text-2xl font-semibold tracking-[-0.02em] text-white">
+                  <h3 className="relative mt-7 text-2xl font-semibold tracking-[-0.02em] text-[#07111f]">
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 min-h-[112px] text-sm leading-7 text-white/55 sm:text-[15px]">
+                  <p className="relative mt-4 min-h-[112px] text-sm leading-7 text-slate-500 sm:text-[15px]">
                     {service.desc}
                   </p>
 
-                  <div className="mt-6 space-y-3">
+                  <div className="relative mt-6 space-y-3">
                     {service.points.map((point) => (
                       <div
                         key={point}
-                        className="flex items-center gap-3 text-sm text-white/62"
+                        className="flex items-center gap-3 text-sm text-slate-600"
                       >
-                        <CheckCircle2 size={15} className="text-cyan-200" />
+                        <CheckCircle2 size={15} className="text-cyan-600" />
                         {point}
                       </div>
                     ))}
@@ -129,7 +129,7 @@ export function Solutions() {
 
                   <a
                     href="#finalcta"
-                    className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-cyan-100/80 transition group-hover:text-white"
+                    className="relative mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#07111f] transition group-hover:text-cyan-700"
                   >
                     Discuss this service
                     <ArrowRight

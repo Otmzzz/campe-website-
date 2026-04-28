@@ -69,21 +69,29 @@ export function Process() {
       id="process"
       className="relative overflow-hidden bg-[#07111f] px-5 py-24 text-white sm:px-8 lg:px-10 lg:py-32"
     >
-      <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl" />
-      <div className="absolute bottom-10 left-[-120px] h-[380px] w-[380px] rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#07111f,#0b1728,#10243d)]" />
+
+      <div className="absolute inset-0 opacity-[0.045]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:58px_58px]" />
+      </div>
+
+      <div className="absolute left-1/2 top-20 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl" />
+      <div className="absolute bottom-[-180px] right-[-120px] h-[500px] w-[500px] rounded-full bg-blue-500/12 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">
+            <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 backdrop-blur-xl">
               <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
                 CampE Execution Method
               </span>
             </div>
 
-            <h2 className="text-4xl font-semibold tracking-[-0.035em] text-white sm:text-5xl lg:text-[3.55rem] lg:leading-[1.05]">
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.65rem] lg:leading-[1.05]">
               From unclear operations
-              <span className="block text-white/55">to controlled execution.</span>
+              <span className="block text-white/55">
+                to controlled execution.
+              </span>
             </h2>
 
             <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
@@ -98,7 +106,7 @@ export function Process() {
             {principles.map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-white/65"
+                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-medium text-white/65 backdrop-blur-xl"
               >
                 <CheckCircle2 size={16} className="text-cyan-200" />
                 {item}
@@ -126,18 +134,19 @@ export function Process() {
                     </span>
                   </div>
 
-                  <h3 className="mt-7 text-2xl font-semibold tracking-[-0.02em] text-white">
+                  <h3 className="relative mt-7 text-2xl font-semibold tracking-[-0.02em] text-white">
                     {step.title}
                   </h3>
 
-                  <p className="mt-4 min-h-[112px] text-sm leading-7 text-white/55 sm:text-[15px]">
+                  <p className="relative mt-4 min-h-[112px] text-sm leading-7 text-white/55 sm:text-[15px]">
                     {step.desc}
                   </p>
 
-                  <div className="mt-6 rounded-2xl border border-cyan-200/10 bg-cyan-200/[0.06] p-4">
+                  <div className="relative mt-6 rounded-2xl border border-cyan-200/10 bg-cyan-200/[0.06] p-4">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-100/55">
                       Output
                     </p>
+
                     <p className="mt-2 flex items-center justify-between gap-3 text-sm font-medium text-white/75">
                       {step.output}
                       <ArrowRight size={15} className="text-cyan-200" />
