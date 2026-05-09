@@ -34,28 +34,23 @@ export function Navbar() {
         animate={{
           maxWidth: isScrolled ? 1180 : 1280,
           backgroundColor: isScrolled
-            ? 'rgba(7, 17, 31, 0.88)'
-            : 'rgba(255, 255, 255, 0.055)',
+            ? 'rgba(7, 17, 31, 0.9)'
+            : 'rgba(7, 17, 31, 0.72)',
         }}
         transition={{ duration: 0.45, ease: 'easeOut' }}
-        className="mx-auto rounded-[1.7rem] border border-white/10 shadow-2xl shadow-black/20 backdrop-blur-2xl"
+        className="mx-auto rounded-[1.9rem] border border-white/10 shadow-2xl shadow-black/20 backdrop-blur-2xl"
       >
         <motion.div
-          animate={{ height: isScrolled ? 66 : 74 }}
+          animate={{ height: isScrolled ? 76 : 86 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
           className="flex items-center justify-between px-5 sm:px-7 lg:px-8"
         >
           {/* BRAND */}
-          <a href="#" className="flex items-center">
+          <a href="#" className="flex min-w-0 items-center">
             <motion.img
-              src={campeLogo}
-              alt="CampE Technologies"
-              animate={{
-                height: isScrolled ? 52 : 62,
-                opacity: isScrolled ? 0.95 : 1,
-              }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="w-auto object-contain"
+               src={campeLogo}
+                alt="CampE Technologies"
+              className="-mt-7 h-[34px] w-120 max-w-[190px] object-contain brightness-110 sm:h-[40px] sm:max-w-[230px] lg:h-[46px] lg:max-w-[410px]"
             />
           </a>
 
@@ -68,7 +63,6 @@ export function Navbar() {
                 className="group relative text-[14px] font-medium tracking-wide text-white/68 transition hover:text-white"
               >
                 {item.label}
-
                 <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 rounded-full bg-cyan-200 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
@@ -87,7 +81,7 @@ export function Navbar() {
 
           {/* MOBILE BUTTON */}
           <button
-            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-white backdrop-blur-xl transition hover:bg-white/[0.1] lg:hidden"
+            className="ml-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-[1.25rem] border border-white/10 bg-white/[0.06] text-white backdrop-blur-xl transition hover:bg-white/[0.1] lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -100,7 +94,7 @@ export function Navbar() {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X size={22} />
+                  <X size={26} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -110,7 +104,7 @@ export function Navbar() {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu size={22} />
+                  <Menu size={26} />
                 </motion.div>
               )}
             </AnimatePresence>
