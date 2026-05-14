@@ -28,7 +28,7 @@ export function Footer() {
               </p>
 
               <h3 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-4xl">
-                Structure clarity before complexity slows the business.
+                Clarify the operating structure before complexity slows the business.
               </h3>
             </div>
 
@@ -36,7 +36,7 @@ export function Footer() {
               href="#finalcta"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#07111f] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#10243d]"
             >
-              Start a Conversation
+              Start a conversation
               <ArrowUpRight size={16} />
             </a>
           </div>
@@ -55,9 +55,9 @@ export function Footer() {
             </h4>
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-              CampE helps organizations reduce operational friction, improve
-              leadership visibility, modernize workflows, and build structured
-              systems designed for measurable growth.
+              CampE helps organizations reduce operational friction, strengthen
+              leadership visibility, modernize workflows, and scale with
+              systems built for measurable growth.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export function Footer() {
                 className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-cyan-200 hover:text-cyan-700"
               >
                 <Copy size={15} />
-                Copy Email
+                Copy email
               </button>
             </div>
           </div>
@@ -114,9 +114,9 @@ export function Footer() {
 
         {/* Bottom Strip */}
         <div className="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>© {year} CampE Technologies. All rights reserved.</p>
+          <p>&copy; {year} CampE Technologies. All rights reserved.</p>
 
-          <p>Structured Clarity. Scalable Control.</p>
+          <p>Structured clarity. Scalable control.</p>
         </div>
       </div>
     </footer>
