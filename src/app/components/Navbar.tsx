@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -6,6 +6,18 @@ import campeLogo from '../assets/logos/campe-technologies.png';
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { label: 'Solutions', href: '#solutions', dropdown: true },
@@ -15,7 +27,13 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-cyan-300/20 bg-[#06101d]/95 shadow-2xl shadow-black/30 backdrop-blur-xl">
+    <nav
+      className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-300 ease-out ${
+        isScrolled
+          ? 'border-cyan-300/10 bg-slate-950/70 shadow-lg shadow-slate-950/20 backdrop-blur-xl'
+          : 'border-cyan-300/20 bg-[#06101d]/95 shadow-2xl shadow-black/30'
+      }`}
+    >
       {/* TOP BAR */}
       <div className="hidden border-b border-white/10 bg-[#020712]/85 lg:block">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-2 text-[12px] text-white/65">
