@@ -19,10 +19,10 @@ export default function App() {
       <Navbar />
       <Hero />
       <TrustSection />
-      <WhyCampE />
       <Solutions />
-      <Industries />
+      <WhyCampE />
       <Process />
+      <Industries />
       <Testimonials />
       <FinalCTA />
       <Footer />
