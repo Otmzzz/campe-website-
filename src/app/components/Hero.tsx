@@ -10,16 +10,24 @@ import powerBiLogo from '../assets/logos/powerbi.svg';
 
 export function Hero() {
   const stats = [
-    { value: 95, suffix: '%', label: 'Clearer workflows' },
-    { value: 24, suffix: '/7', label: 'Operational visibility' },
-    { value: 3, suffix: 'x', label: 'Faster decisions' },
+    { value: 4, suffix: '', label: 'Operating domains aligned' },
+    { value: 1, suffix: '', label: 'Leadership control view' },
+    { value: 24, suffix: '/7', label: 'Coordination readiness' },
   ];
 
   const logos = [
-    { src: powerBiLogo, label: 'Power BI', position: 'left-[3%] top-[6%] sm:left-[6%] sm:top-[10%]', delay: 0 },
-    { src: azureLogo, label: 'Microsoft Azure', position: 'right-[2%] top-[18%] sm:right-[4%] sm:top-[22%]', delay: 0.4 },
-    { src: awsLogo, label: 'AWS', position: 'left-[2%] bottom-[18%] sm:left-[2%] sm:bottom-[22%]', delay: 0.8 },
-    { src: fortinetLogo, label: 'Fortinet', position: 'right-[5%] bottom-[10%] sm:right-[10%] sm:bottom-[14%]', delay: 1.2 },
+    { src: powerBiLogo, label: 'Power BI' },
+    { src: azureLogo, label: 'Microsoft Azure' },
+    { src: awsLogo, label: 'AWS' },
+    { src: fortinetLogo, label: 'Fortinet' },
+  ];
+
+  const focusAreas = ['Workflow', 'Data', 'People', 'Execution'];
+
+  const controlLines = [
+    'Governance and approval paths',
+    'Operational reporting discipline',
+    'Emergency coordination visibility',
   ];
 
   return (
@@ -29,34 +37,34 @@ export function Hero() {
     >
       <div className="absolute inset-0 bg-[linear-gradient(135deg,#07111f,#0b1728,#10243d)]" />
 
-      <div className="absolute inset-0 opacity-[0.05]">
-        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:56px_56px]" />
+      <div className="absolute inset-0 opacity-[0.035]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:72px_72px]" />
       </div>
 
-      <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-cyan-300/10 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute left-[-120px] top-8 h-[380px] w-[380px] rounded-full bg-cyan-300/8 blur-3xl" />
+      <div className="absolute bottom-[-120px] right-[-80px] h-[520px] w-[520px] rounded-full bg-blue-500/8 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-96px)] max-w-[1280px] items-center gap-12 px-5 pb-16 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-10">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-96px)] max-w-[1280px] items-center gap-12 px-5 pb-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-10">
         <div className="text-center lg:text-left">
           <Reveal>
             <div className="mx-auto mb-7 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 backdrop-blur-xl lg:mx-0">
               <span className="text-xs font-medium tracking-[0.18em] text-white/70">
-                SYSTEMS INTELLIGENCE CONSULTING
+                BUSINESS SYSTEMS & GOVERNANCE CONSULTING
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mx-auto max-w-4xl text-[2.75rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-[5.35rem]">
-              Turning business complexity into structured clarity.
+            <h1 className="mx-auto max-w-4xl text-[2.55rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-[5rem]">
+              Turning operational complexity into controlled systems.
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="mx-auto mt-7 max-w-2xl text-justify text-base leading-8 text-white/65 sm:text-lg lg:mx-0">
-              CampE helps organizations design smarter systems, improve operational
-              control, build decision dashboards, and modernize workflows without
-              losing human direction.
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg lg:mx-0">
+              CampE helps leadership teams align workflow, data, people, and
+              execution into structured operating systems with clearer visibility,
+              stronger governance, and better decision control.
             </p>
           </Reveal>
 
@@ -66,7 +74,7 @@ export function Hero() {
                 href="#solutions"
                 className="group inline-flex w-full max-w-[300px] items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#07111f] shadow-xl shadow-black/20 transition hover:bg-cyan-50 sm:w-auto"
               >
-                Explore Solutions
+                Review the approach
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
 
@@ -74,7 +82,7 @@ export function Hero() {
                 href="#why-campe"
                 className="inline-flex w-full max-w-[300px] items-center justify-center rounded-full border border-white/12 bg-white/[0.04] px-7 py-4 text-sm font-semibold text-white/75 transition hover:bg-white/[0.08] hover:text-white sm:w-auto"
               >
-                Why CampE
+                See governance fit
               </a>
             </div>
           </Reveal>
@@ -83,17 +91,17 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/70">
                 <ShieldCheck size={15} className="text-cyan-200" />
-                Governance-ready
+                Governance structure
               </div>
 
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/70">
                 <Zap size={15} className="text-cyan-200" />
-                Execution-focused
+                Execution visibility
               </div>
 
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/70">
                 <CheckCircle2 size={15} className="text-cyan-200" />
-                Built for control
+                Emergency coordination
               </div>
             </div>
           </Reveal>
@@ -104,7 +112,7 @@ export function Hero() {
                 <motion.div
                   key={item.label}
                   whileHover={{ y: -4 }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 backdrop-blur-xl sm:p-5"
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl sm:p-5"
                 >
                   <p className="text-2xl font-semibold text-white sm:text-3xl">
                     <AnimatedCounter value={item.value} suffix={item.suffix} />
@@ -119,52 +127,75 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.18}>
-          <div className="relative mx-auto mt-12 h-[300px] w-full max-w-sm sm:mt-0 sm:h-[500px] sm:max-w-xl lg:h-[600px]">
-            <div className="absolute left-1/2 top-1/2 h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:h-[360px] sm:w-[360px]" />
-            <div className="absolute left-1/2 top-1/2 h-[165px] w-[165px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:h-[250px] sm:w-[250px]" />
-
+          <div className="relative mx-auto mt-8 w-full max-w-xl sm:mt-0">
             <motion.div
-              className="absolute left-1/2 top-1/2 z-10 flex h-44 w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.07] text-center shadow-2xl shadow-black/30 backdrop-blur-2xl sm:h-72 sm:w-72 sm:rounded-[2.5rem] lg:h-80 lg:w-80"
+              className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/30 backdrop-blur-2xl"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <div className="px-5 sm:px-8">
-                <p className="text-[10px] font-semibold tracking-[0.32em] text-cyan-200 sm:text-xs sm:tracking-[0.38em]">
-                  CAMPE
+              <div className="border-b border-white/10 px-5 py-4 sm:px-7">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-cyan-200/75">
+                  CampE Operating Architecture
                 </p>
 
-                <h3 className="mt-3 text-xl font-semibold leading-tight text-white sm:mt-4 sm:text-3xl lg:text-4xl">
-                  Systems
-                  <span className="block">Control Layer</span>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+                  One control view for work that cannot stay scattered.
                 </h3>
 
-                <p className="mx-auto mt-3 max-w-[150px] text-[11px] leading-5 text-white/55 sm:mt-5 sm:max-w-[230px] sm:text-sm sm:leading-6">
-                  Analytics, cloud, cybersecurity, and workflow design aligned
-                  into one operating view.
+                <p className="mt-4 text-sm leading-7 text-white/56 sm:text-[15px]">
+                  A practical structure for operations, reporting, controls, and
+                  response coordination before tools are selected or expanded.
                 </p>
               </div>
-            </motion.div>
 
-            {logos.map((logo) => (
-              <motion.div
-                key={logo.label}
-                className={`absolute z-20 flex h-12 w-20 items-center justify-center rounded-2xl border border-white/10 bg-white/95 p-2 shadow-2xl shadow-black/25 sm:h-20 sm:w-32 sm:rounded-[1.25rem] sm:p-3 lg:h-22 lg:w-36 ${logo.position}`}
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: logo.delay,
-                }}
-                whileHover={{ scale: 1.06 }}
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.label}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </motion.div>
-            ))}
+              <div className="grid gap-px bg-white/10 sm:grid-cols-2">
+                {focusAreas.map((area) => (
+                  <div key={area} className="bg-[#0a1524]/95 p-5 sm:p-6">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/38">
+                      Aligned domain
+                    </p>
+                    <p className="mt-3 text-xl font-semibold text-white">
+                      {area}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="px-5 py-5 sm:px-7 sm:py-6">
+                <div className="space-y-3">
+                  {controlLines.map((line) => (
+                    <div
+                      key={line}
+                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm leading-6 text-white/68"
+                    >
+                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-cyan-200/80" />
+                      {line}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/38">
+                    Platform alignment
+                  </p>
+
+                  <div className="mt-4 grid grid-cols-4 gap-3">
+                    {logos.map((logo) => (
+                      <div
+                        key={logo.label}
+                        className="flex h-12 items-center justify-center rounded-xl border border-white/10 bg-white/95 p-2 shadow-lg shadow-black/15 sm:h-14"
+                      >
+                        <img
+                          src={logo.src}
+                          alt={logo.label}
+                          className="max-h-full max-w-full object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </Reveal>
       </div>
