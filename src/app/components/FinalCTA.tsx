@@ -113,6 +113,11 @@ Thank you.`
                 The first conversation is designed to understand the operating
                 situation before recommending scope, tools, or implementation work.
               </p>
+
+              <p className="mt-2 text-sm leading-7 text-white/42">
+                Paid clarity sessions start at ₱15,000. Full engagements are
+                scoped separately after review.
+              </p>
             </div>
 
             {/* RIGHT FORM */}
