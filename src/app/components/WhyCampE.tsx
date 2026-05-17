@@ -1,157 +1,142 @@
 import {
   ArrowRight,
-  BadgeCheck,
-  BrainCircuit,
-  Building2,
+  CheckCircle2,
+  ClipboardCheck,
   Gauge,
-  LockKeyhole,
+  Layers3,
   Network,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function WhyCampE() {
-  const trustPoints = [
+  const principles = [
     {
       icon: Network,
-      value: 'System before software',
-      label: 'We map the workflow first, then choose the tools that fit.',
+      title: 'System before software',
+      description:
+        'We first understand the operating model, workflow constraints, ownership lines, and day-to-day decision points.',
     },
     {
-      icon: BrainCircuit,
-      value: 'AI with purpose',
-      label: 'We apply AI only where it improves speed, clarity, or control.',
+      icon: ClipboardCheck,
+      title: 'Governance before scale',
+      description:
+        'Growth needs rules of work: approvals, documentation, accountability, and control points that can be followed.',
     },
     {
       icon: Gauge,
-      value: 'Measured execution',
-      label: 'We define dashboards, KPIs, and operating signals leaders can act on.',
+      title: 'Visibility before automation',
+      description:
+        'Automation works better when leaders already know what should be measured, reviewed, escalated, and acted on.',
     },
     {
-      icon: LockKeyhole,
-      value: 'Governed by design',
-      label: 'We consider access, accountability, controls, and risk early.',
+      icon: Layers3,
+      title: 'Execution before expansion',
+      description:
+        'We focus on the routines, responsibilities, and management signals needed to make change hold in daily operations.',
     },
   ];
 
-  const credibility = [
-    'Systems Architecture',
-    'Applied AI Workflows',
-    'Decision Dashboards',
-    'Cloud Readiness',
-    'Cybersecurity Control',
-    'Operational Governance',
+  const workingRules = [
+    'Diagnose the operating reality',
+    'Design only what the organization can adopt',
+    'Use technology to reinforce discipline',
   ];
 
   return (
     <section
       id="why-campe"
-      className="relative overflow-hidden bg-white px-5 py-24 text-[#07111f] sm:px-8 lg:px-10 lg:py-32"
+      className="relative overflow-hidden bg-white px-5 py-24 text-[#07111f] sm:px-8 lg:px-10 lg:py-28"
     >
-      <div className="absolute right-[-160px] top-20 h-[420px] w-[420px] rounded-full bg-cyan-100 blur-3xl" />
-      <div className="absolute left-[-140px] bottom-10 h-[380px] w-[380px] rounded-full bg-blue-100 blur-3xl" />
-
-      <div className="relative z-10 mx-auto grid max-w-[1280px] items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+      <div className="relative z-10 mx-auto max-w-[1280px]">
         <Reveal>
-          <div>
-            <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Why CampE
-              </span>
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+            <div>
+              <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Consulting Principles
+                </span>
+              </div>
+
+              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.35rem] lg:leading-[1.05]">
+                CampE designs from operating discipline,
+                <span className="block text-slate-500">not tool preference.</span>
+              </h2>
             </div>
 
-            <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.6rem] lg:leading-[1.05]">
-              We do not start with tools.
-              <span className="block text-slate-500">
-                We start with control.
-              </span>
-            </h2>
-
-            <p className="mt-7 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-              CampE helps leaders turn scattered work, unclear decisions, and
-              disconnected data into structured operating systems that can be
-              measured, improved, and scaled.
+            <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:justify-self-end">
+              The work starts with how the organization actually functions:
+              decisions, responsibilities, handoffs, evidence, and the routines
+              needed to keep execution consistent.
             </p>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {credibility.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-600 shadow-sm"
-                >
-                  <BadgeCheck size={14} className="text-slate-500" />
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="#solutions"
-              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[#07111f] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300/40 transition hover:bg-[#10243d]"
-            >
-              Explore Solutions
-              <ArrowRight
-                size={15}
-                className="transition-transform group-hover:translate-x-0.5"
-              />
-            </a>
           </div>
         </Reveal>
 
-        <Reveal delay={0.14}>
-          <div className="relative">
-            <div className="absolute inset-0 rounded-[2.25rem] bg-cyan-100 blur-3xl" />
+        <div className="mt-14 grid gap-5 lg:grid-cols-4">
+          {principles.map((principle, index) => {
+            const Icon = principle.icon;
 
-            <div className="relative overflow-hidden rounded-[2.25rem] border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/70 sm:p-7 lg:p-8">
-              <div className="mb-7 flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#07111f] shadow-sm">
-                  <Building2 size={18} />
-                </div>
+            return (
+              <Reveal key={principle.title} delay={index * 0.05}>
+                <div className="h-full rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6 transition duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#07111f] text-cyan-200">
+                      <Icon size={18} />
+                    </div>
 
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-700/70">
-                    CampE Method
-                  </p>
-                  <h3 className="mt-1 text-2xl font-semibold text-[#07111f]">
-                    Clarity → Control → Scale
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-7 text-xl font-semibold tracking-[-0.02em] text-[#07111f]">
+                    {principle.title}
                   </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-slate-500">
+                    {principle.description}
+                  </p>
                 </div>
-              </div>
+              </Reveal>
+            );
+          })}
+        </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                {trustPoints.map((point, index) => {
-                  const Icon = point.icon;
+        <Reveal delay={0.18}>
+          <div className="mt-8 grid gap-5 rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:p-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700/70">
+                Working standard
+              </p>
+              <h3 className="mt-2 text-2xl font-semibold tracking-[-0.025em] text-[#07111f]">
+                Practical enough to adopt. Structured enough to endure.
+              </h3>
+            </div>
 
-                  return (
-                    <Reveal key={point.value} delay={index * 0.05}>
-                      <div className="group min-h-[190px] rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg">
-                        <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#07111f] shadow-sm">
-                          <Icon size={17} />
-                        </div>
-
-                        <h4 className="text-lg font-semibold text-[#07111f]">
-                          {point.value}
-                        </h4>
-
-                        <p className="mt-3 text-sm leading-7 text-slate-500">
-                          {point.label}
-                        </p>
-                      </div>
-                    </Reveal>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700/70">
-                  Operating Principle
-                </p>
-                <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
-                  Technology becomes powerful only when the business system is
-                  already clear.
-                </p>
-              </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {workingRules.map((rule) => (
+                <div
+                  key={rule}
+                  className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium leading-6 text-slate-600"
+                >
+                  <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-cyan-700" />
+                  {rule}
+                </div>
+              ))}
             </div>
           </div>
+        </Reveal>
+
+        <Reveal delay={0.22}>
+          <a
+            href="#solutions"
+            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[#07111f] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300/40 transition hover:bg-[#10243d]"
+          >
+            Review solution areas
+            <ArrowRight
+              size={15}
+              className="transition-transform group-hover:translate-x-0.5"
+            />
+          </a>
         </Reveal>
       </div>
     </section>
