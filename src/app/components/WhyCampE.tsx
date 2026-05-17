@@ -1,35 +1,24 @@
-import {
-  ArrowRight,
-  CheckCircle2,
-  ClipboardCheck,
-  Gauge,
-  Layers3,
-  Network,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function WhyCampE() {
   const principles = [
     {
-      icon: Network,
       title: 'System before software',
       description:
         'We first understand the operating model, workflow constraints, ownership lines, and day-to-day decision points.',
     },
     {
-      icon: ClipboardCheck,
       title: 'Governance before scale',
       description:
         'Growth needs rules of work: approvals, documentation, accountability, and control points that can be followed.',
     },
     {
-      icon: Gauge,
       title: 'Visibility before automation',
       description:
         'Automation works better when leaders already know what should be measured, reviewed, escalated, and acted on.',
     },
     {
-      icon: Layers3,
       title: 'Execution before expansion',
       description:
         'We focus on the routines, responsibilities, and management signals needed to make change hold in daily operations.',
@@ -49,80 +38,58 @@ export function WhyCampE() {
     >
       <div className="relative z-10 mx-auto max-w-[1280px]">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
-            <div>
-              <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  Consulting Principles
-                </span>
-              </div>
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-14">
+            <div className="lg:pt-16">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                Consulting Principles
+              </p>
 
-              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.35rem] lg:leading-[1.05]">
-                CampE designs from operating discipline,
-                <span className="block text-slate-500">not tool preference.</span>
-              </h2>
+              <p className="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+                The work starts with how the organization actually functions:
+                decisions, responsibilities, handoffs, evidence, and the routines
+                needed to keep execution consistent.
+              </p>
             </div>
 
-            <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:justify-self-end">
-              The work starts with how the organization actually functions:
-              decisions, responsibilities, handoffs, evidence, and the routines
-              needed to keep execution consistent.
-            </p>
+            <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:justify-self-end lg:text-[3.45rem] lg:leading-[1.05]">
+              CampE designs from operating discipline,
+              <span className="block text-slate-500">not tool preference.</span>
+            </h2>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-4">
-          {principles.map((principle, index) => {
-            const Icon = principle.icon;
+        <div className="mt-14 grid gap-x-14 gap-y-10 border-t border-slate-200 pt-8 lg:grid-cols-2">
+          {principles.map((principle, index) => (
+            <Reveal key={principle.title} delay={index * 0.05}>
+              <div
+                className={`border-b border-slate-200 pb-8 ${
+                  index % 2 === 1 ? 'lg:pt-10' : ''
+                }`}
+              >
+                <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#07111f] sm:text-3xl">
+                  {principle.title}
+                </h3>
 
-            return (
-              <Reveal key={principle.title} delay={index * 0.05}>
-                <div className="h-full rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6 transition duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg">
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#07111f] text-cyan-200">
-                      <Icon size={18} />
-                    </div>
-
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-7 text-xl font-semibold tracking-[-0.02em] text-[#07111f]">
-                    {principle.title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-7 text-slate-500">
-                    {principle.description}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
+                <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
+                  {principle.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
 
         <Reveal delay={0.18}>
-          <div className="mt-8 grid gap-5 rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:p-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700/70">
-                Working standard
-              </p>
-              <h3 className="mt-2 text-2xl font-semibold tracking-[-0.025em] text-[#07111f]">
-                Practical enough to adopt. Structured enough to endure.
-              </h3>
-            </div>
+          <div className="mt-10 max-w-5xl">
+            <p className="text-base leading-8 text-slate-600">
+              <span className="font-semibold text-[#07111f]">
+                Working standard:
+              </span>{' '}
+              Practical enough to adopt. Structured enough to endure.
+            </p>
 
-            <div className="grid gap-3 sm:grid-cols-3">
-              {workingRules.map((rule) => (
-                <div
-                  key={rule}
-                  className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium leading-6 text-slate-600"
-                >
-                  <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-cyan-700" />
-                  {rule}
-                </div>
-              ))}
-            </div>
+            <p className="mt-3 text-sm leading-7 text-slate-500">
+              {workingRules.join(' / ')}
+            </p>
           </div>
         </Reveal>
 
