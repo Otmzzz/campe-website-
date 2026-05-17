@@ -7,25 +7,25 @@ export function FinalCTA() {
     name: '',
     email: '',
     organization: '',
-    concern: 'Workflow / Operations',
+    concern: 'Workflow Structuring',
     preferredDate: '',
     message: '',
   });
 
   const points = [
-    'Understand the current workflow issue',
-    'Identify reporting and visibility gaps',
-    'Clarify system, data, or control risks',
-    'Recommend the next practical move',
+    'Review workflow, governance, or coordination issues',
+    'Identify data, reporting, and responsibility gaps',
+    'Assess system, implementation, or control risks',
+    'Outline a practical first-stage engagement',
   ];
 
   const concerns = [
-    'Workflow / Operations',
-    'Dashboards / Reporting',
-    'AI Workflow Design',
-    'Cloud / Systems Readiness',
-    'Cybersecurity / Controls',
-    'General Consultation',
+    'Workflow Structuring',
+    'Governance / Control Systems',
+    'Data Visibility / Reporting',
+    'Implementation Planning',
+    'Emergency / Field Coordination',
+    'General Systems Review',
   ];
 
   const handleChange = (
@@ -37,17 +37,17 @@ export function FinalCTA() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const subject = encodeURIComponent('CampE Clarity Consultation Request');
+    const subject = encodeURIComponent('CampE Systems Review Request');
 
     const body = encodeURIComponent(
       `Hello CampE Technologies,
 
-I would like to request a clarity consultation.
+I would like to request an initial systems review.
 
 Name: ${form.name}
 Email: ${form.email}
 Organization: ${form.organization}
-Concern Type: ${form.concern}
+Review Area: ${form.concern}
 Preferred Date: ${form.preferredDate}
 
 Message:
@@ -80,20 +80,21 @@ Thank you.`
             <div className="p-6 sm:p-8 lg:p-10">
               <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2">
                 <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
-                  Book a Consultation
+                  Systems Review Request
                 </span>
               </div>
 
               <h2 className="max-w-xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.35rem] lg:leading-[1.05]">
-                Start with a clear conversation.
+                Start with the operating issue.
                 <span className="block text-white/55">
-                  Then decide the next move.
+                  Then define the right first step.
                 </span>
               </h2>
 
               <p className="mt-7 max-w-xl text-base leading-8 text-white/62 sm:text-lg">
-                Tell us what you want to improve. CampE will review the concern
-                from a systems, workflow, reporting, and control perspective.
+                Share the workflow, governance, reporting, implementation, or
+                coordination concern. CampE will review it from a practical
+                systems and operating model perspective.
               </p>
 
               <div className="mt-9 space-y-3">
@@ -109,8 +110,8 @@ Thank you.`
               </div>
 
               <p className="mt-7 text-sm leading-7 text-white/42">
-                No hard selling. The first conversation is meant to clarify the
-                business issue before proposing any solution.
+                The first conversation is designed to understand the operating
+                situation before recommending scope, tools, or implementation work.
               </p>
             </div>
 
@@ -123,10 +124,10 @@ Thank you.`
 
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-200/70">
-                    Appointment Request
+                    Review Intake
                   </p>
                   <h3 className="mt-1 text-2xl font-semibold text-white">
-                    Send consultation details
+                    Send systems review details
                   </h3>
                 </div>
               </div>
@@ -157,7 +158,7 @@ Thank you.`
                   name="organization"
                   value={form.organization}
                   onChange={handleChange}
-                  placeholder="Organization / Company"
+                  placeholder="Organization / office"
                   className="w-full rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-cyan-200/40 focus:bg-white/[0.08]"
                 />
 
@@ -188,7 +189,7 @@ Thank you.`
                   onChange={handleChange}
                   required
                   rows={5}
-                  placeholder="Briefly describe what you want to improve..."
+                  placeholder="Briefly describe the operating issue or review need..."
                   className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm leading-7 text-white outline-none transition placeholder:text-white/35 focus:border-cyan-200/40 focus:bg-white/[0.08]"
                 />
 
@@ -197,7 +198,7 @@ Thank you.`
                   className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#07111f] shadow-xl shadow-black/20 transition hover:bg-cyan-50"
                 >
                   <Mail size={17} />
-                  Prepare Appointment Request
+                  Prepare systems review request
                   <ArrowRight
                     size={17}
                     className="transition-transform group-hover:translate-x-1"
@@ -205,7 +206,7 @@ Thank you.`
                 </button>
 
                 <p className="text-center text-xs leading-6 text-white/38">
-                  This opens your email app with the request already prepared.
+                  This opens your email app with the review request already prepared.
                 </p>
               </form>
             </div>
