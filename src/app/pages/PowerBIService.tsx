@@ -1,4 +1,27 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const dashboardImages = [
+  {
+    src: '/powerbi/dashboard-1.png',
+    alt: 'Power BI dashboard reference showing business performance metrics',
+  },
+  {
+    src: '/powerbi/dashboard-2.jpg',
+    alt: 'Power BI dashboard reference showing operational reporting views',
+  },
+  {
+    src: '/powerbi/dashboard-3.png',
+    alt: 'Power BI dashboard reference showing executive KPI reporting',
+  },
+];
+
+const reportingFocus = [
+  'Sales visibility',
+  'Inventory movement',
+  'Workflow status',
+  'Leadership control',
+];
 
 const approachItems = [
   'Data source review',
@@ -25,6 +48,76 @@ const bestFit = [
   'Owners who need clearer control reports',
   'Teams preparing for better governance and accountability',
 ];
+
+function DashboardCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % dashboardImages.length);
+    }, 4500);
+
+    return () => window.clearInterval(timer);
+  }, [activeIndex]);
+
+  const showPrevious = () => {
+    setActiveIndex((current) =>
+      current === 0 ? dashboardImages.length - 1 : current - 1,
+    );
+  };
+
+  const showNext = () => {
+    setActiveIndex((current) => (current + 1) % dashboardImages.length);
+  };
+
+  return (
+    <div className="mt-10">
+      <div className="relative overflow-hidden rounded-lg border border-white/10 bg-black/20">
+        <div className="relative aspect-[16/10] w-full sm:aspect-[16/9]">
+          {dashboardImages.map((image, index) => (
+            <img
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              className={`absolute inset-0 h-full w-full object-contain p-2 transition-all duration-700 ease-out sm:p-3 ${
+                index === activeIndex
+                  ? 'translate-x-0 opacity-100'
+                  : index < activeIndex
+                    ? '-translate-x-4 opacity-0'
+                    : 'translate-x-4 opacity-0'
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center justify-between px-3 sm:px-5">
+          <button
+            type="button"
+            aria-label="Show previous dashboard reference"
+            onClick={showPrevious}
+            className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#06101d]/85 text-white transition hover:border-cyan-200/60 hover:bg-[#0b1a2d] focus:outline-none focus:ring-2 focus:ring-cyan-200/60 sm:h-11 sm:w-11"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            type="button"
+            aria-label="Show next dashboard reference"
+            onClick={showNext}
+            className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#06101d]/85 text-white transition hover:border-cyan-200/60 hover:bg-[#0b1a2d] focus:outline-none focus:ring-2 focus:ring-cyan-200/60 sm:h-11 sm:w-11"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      <p className="mt-4 max-w-4xl text-[12px] leading-6 text-slate-400">
+        Temporary visual references only. Images are sourced from publicly
+        available Google Images and will be replaced with actual CampE Power BI
+        dashboard samples.
+      </p>
+    </div>
+  );
+}
 
 export function PowerBIService() {
   return (
@@ -64,17 +157,17 @@ export function PowerBIService() {
               Reporting Focus
             </p>
             <div className="mt-6 space-y-5">
-              {['Sales visibility', 'Inventory movement', 'Workflow status', 'Leadership control'].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-between border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
-                  >
-                    <span className="text-[15px] font-bold text-white">{item}</span>
-                    <ArrowRight size={16} className="text-cyan-200/70" />
-                  </div>
-                ),
-              )}
+              {reportingFocus.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center justify-between border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
+                >
+                  <span className="text-[15px] font-bold text-white">
+                    {item}
+                  </span>
+                  <ArrowRight size={16} className="text-cyan-200/70" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -101,47 +194,77 @@ export function PowerBIService() {
         </div>
       </section>
 
+      <section className="border-b border-white/10 bg-[#07111f]">
+        <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
+          <div className="max-w-4xl">
+            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+              Dashboard References
+            </p>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              A control view should be readable before it is impressive.
+            </h2>
+            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+              The dashboards we build are designed for management review:
+              clear measures, visible movement, and enough context for leaders
+              to decide what needs attention without digging through files.
+            </p>
+          </div>
+
+          <DashboardCarousel />
+        </div>
+      </section>
+
       <section className="border-b border-white/10 bg-[#081625]">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
-                CampE Approach
-              </p>
-              <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
-                From scattered sources to a usable review system.
-              </h2>
-            </div>
+          <div className="max-w-4xl">
+            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+              CampE Approach
+            </p>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              From scattered sources to a usable review system.
+            </h2>
+            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+              We begin with the way decisions are actually made, then work back
+              into the data structure, refresh logic, and dashboard pages needed
+              to support that review rhythm.
+            </p>
+          </div>
 
-            <div className="border-t border-white/10">
-              {approachItems.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-white/10 py-5"
-                >
-                  <CheckCircle2 size={18} className="shrink-0 text-cyan-200" />
-                  <span className="text-[15px] font-bold text-slate-100">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="mt-10 max-w-4xl border-t border-white/10">
+            {approachItems.map((item, index) => (
+              <div
+                key={item}
+                className="flex flex-col gap-2 border-b border-white/10 py-5 sm:flex-row sm:items-baseline sm:gap-8"
+              >
+                <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-cyan-200/60 sm:w-16">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="text-[15px] font-bold text-slate-100">
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="border-b border-white/10 bg-[#07111f]">
-        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-16 sm:px-7 lg:grid-cols-2 lg:px-10 lg:py-20">
-          <div>
+        <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
+          <div className="max-w-4xl">
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
               Deliverables
             </p>
             <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
               Practical assets your team can review and maintain.
             </h2>
+            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+              Each engagement is shaped around the dashboards, definitions, and
+              handover material your team needs to keep reporting useful after
+              launch.
+            </p>
           </div>
 
-          <div className="grid gap-x-10 border-t border-white/10 sm:grid-cols-2">
+          <div className="mt-10 max-w-4xl border-t border-white/10">
             {deliverables.map((item) => (
               <div
                 key={item}
@@ -155,17 +278,22 @@ export function PowerBIService() {
       </section>
 
       <section className="border-b border-white/10 bg-[#081625]">
-        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-16 sm:px-7 lg:grid-cols-[0.78fr_1.22fr] lg:px-10 lg:py-20">
-          <div>
+        <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
+          <div className="max-w-4xl">
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
               Best Fit
             </p>
             <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
               Built for teams that need clearer operating signals.
             </h2>
+            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+              This service is strongest where day-to-day activity already
+              produces useful data, but management still depends on manual
+              consolidation or delayed reporting.
+            </p>
           </div>
 
-          <div className="border-t border-white/10">
+          <div className="mt-10 max-w-4xl border-t border-white/10">
             {bestFit.map((item) => (
               <div
                 key={item}
