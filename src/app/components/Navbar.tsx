@@ -54,22 +54,22 @@ export function Navbar() {
       items: [
         {
           label: 'Power BI Development',
-          href: '#solutions',
+          href: '/services/power-bi-development',
           description: 'Dashboards, operational reporting, and decision visibility.',
         },
         {
           label: 'Governance and Control Review',
-          href: '#solutions',
+          href: '/services/governance-control-review',
           description: 'Approval flows, accountability, documentation, and risk gaps.',
         },
         {
           label: 'Cloud and IT Advisory',
-          href: '#solutions',
+          href: '/services/cloud-it-advisory',
           description: 'Access, deployment, contractor, and cloud control review.',
         },
         {
           label: 'Systems Architecture',
-          href: '#solutions',
+          href: '/services/systems-architecture',
           description: 'Process structure, data flow, and operating model design.',
         },
       ],
@@ -108,22 +108,22 @@ export function Navbar() {
       items: [
         {
           label: 'Business Clarity Systems',
-          href: '#solutions',
+          href: '/solutions/business-clarity-systems',
           description: 'Turn scattered operations into visible decision structures.',
         },
         {
           label: 'Control Dashboards',
-          href: '#solutions',
+          href: '/solutions/control-dashboards',
           description: 'Track what matters before problems become invisible.',
         },
         {
           label: 'Process Mapping',
-          href: '#solutions',
+          href: '/solutions/process-mapping',
           description: 'Clarify ownership, handoffs, approvals, and exceptions.',
         },
         {
           label: 'Risk Visibility',
-          href: '#solutions',
+          href: '/solutions/risk-visibility',
           description: 'Expose weak points in people, process, data, and systems.',
         },
       ],
