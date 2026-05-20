@@ -239,7 +239,7 @@ export function Navbar() {
               />
             </button>
 
-            <a href="#" className="flex shrink-0 items-center" onClick={closeMenu}>
+            <a href="/" className="flex shrink-0 items-center" onClick={closeMenu}>
               <div className="w-[210px] -translate-y-0.5 sm:w-[285px] lg:w-[340px] lg:-translate-y-1 xl:w-[375px]">
                 <img
                   src={campeLogo}
@@ -251,7 +251,14 @@ export function Navbar() {
           </div>
 
           {/* DESKTOP RIGHT ACTIONS */}
-          <div className="hidden items-center lg:flex">
+          <div className="hidden items-center gap-6 lg:flex">
+            <a
+              href="/"
+              className="text-[13px] font-medium text-white/68 transition hover:text-cyan-100"
+            >
+              Home
+            </a>
+
             <a
               href="#finalcta"
               className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white px-5 py-2.5 text-[13px] font-semibold text-[#06101d] shadow-md shadow-black/15 transition hover:-translate-y-0.5 hover:bg-cyan-50"
@@ -325,6 +332,26 @@ export function Navbar() {
                   </p>
 
                   <div className="border-t border-slate-200">
+                    <a
+                      href="/"
+                      onClick={closeMenu}
+                      className="group flex items-center justify-between border-b border-slate-200 py-5 text-left text-slate-700 transition hover:text-slate-950"
+                    >
+                      <span>
+                        <span className="block text-[16px] font-semibold uppercase tracking-[0.06em]">
+                          Home
+                        </span>
+                        <span className="mt-1.5 block max-w-[280px] text-[12px] leading-relaxed text-slate-500">
+                          Return to the main CampE website.
+                        </span>
+                      </span>
+
+                      <ArrowRight
+                        size={18}
+                        className="ml-4 shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-slate-950"
+                      />
+                    </a>
+
                     {megaMenuGroups.map((group) => {
                       const isActive = activeGroup === group.label;
 
