@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { supabase } from '../lib/supabaseClient';
 
 type ConsultationPanelProps = {
   isOpen: boolean;
@@ -16,6 +18,11 @@ type ConsultationForm = {
   message: string;
 };
 
+type SubmitStatus = {
+  type: 'success' | 'error';
+  message: string;
+};
+
 const concerns = [
   'Power BI / Dashboard Development',
   'Governance and Control Review',
@@ -25,21 +32,25 @@ const concerns = [
   'General Consultation',
 ];
 
+const initialForm: ConsultationForm = {
+  fullName: '',
+  email: '',
+  organization: '',
+  contactNumber: '',
+  concern: concerns[0],
+  preferredDate: '',
+  message: '',
+};
+
 const fieldBase =
   'w-full rounded-md border border-white/12 bg-white/[0.07] px-3.5 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-cyan-200/45 focus:bg-white/[0.09]';
 
 const labelBase = 'mb-2 block text-[12px] font-medium text-white/72';
 
 export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
-  const [form, setForm] = useState<ConsultationForm>({
-    fullName: '',
-    email: '',
-    organization: '',
-    contactNumber: '',
-    concern: concerns[0],
-    preferredDate: '',
-    message: '',
-  });
+  const [form, setForm] = useState<ConsultationForm>(initialForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
 
   useEffect(() => {
     if (!isOpen) {
@@ -64,38 +75,60 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
   }, [isOpen, onClose]);
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    setSubmitStatus(null);
     setForm((current) => ({
       ...current,
       [event.target.name]: event.target.value,
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
-    const subject = encodeURIComponent('CampE Consultation Request');
+    if (isSubmitting) {
+      return;
+    }
 
-    const body = encodeURIComponent(
-      `Hello CampE Technologies,
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-I would like to request a systems review.
+    try {
+      const { error } = await supabase.from('consultation_requests').insert({
+        full_name: form.fullName.trim(),
+        email: form.email.trim(),
+        organization: form.organization.trim() || null,
+        contact_number: form.contactNumber.trim() || null,
+        area_of_concern: form.concern,
+        preferred_date: form.preferredDate || null,
+        message: form.message.trim(),
+        source_page: window.location.pathname,
+      });
 
-Full name: ${form.fullName}
-Email address: ${form.email}
-Organization / company: ${form.organization}
-Contact number: ${form.contactNumber}
-Area of concern: ${form.concern}
-Preferred date: ${form.preferredDate}
+      if (error) {
+        throw error;
+      }
 
-Message / operating issue:
-${form.message}
+      setSubmitStatus({
+        type: 'success',
+        message:
+          'Your consultation request has been submitted. CampE will review the details before confirming the next step.',
+      });
+      setForm({ ...initialForm });
+    } catch (error) {
+      const message =
+        error && typeof error === 'object' && 'message' in error
+          ? String(error.message)
+          : 'The request could not be submitted. Please review the details and try again.';
 
-Thank you.`
-    );
-
-    window.location.href = `mailto:contact@campetechnologies.com?subject=${subject}&body=${body}`;
+      setSubmitStatus({
+        type: 'error',
+        message,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -268,10 +301,24 @@ Thank you.`
 
                 <button
                   type="submit"
-                  className="w-full rounded-md bg-white px-5 py-3.5 text-sm font-semibold text-[#07111f] transition hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200/50 focus:ring-offset-2 focus:ring-offset-[#07111f]"
+                  disabled={isSubmitting}
+                  className="w-full rounded-md bg-white px-5 py-3.5 text-sm font-semibold text-[#07111f] transition hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200/50 focus:ring-offset-2 focus:ring-offset-[#07111f] disabled:cursor-not-allowed disabled:bg-white/65 disabled:text-[#07111f]/70"
                 >
-                  Prepare consultation request
+                  {isSubmitting ? 'Submitting request...' : 'Prepare consultation request'}
                 </button>
+
+                {submitStatus && (
+                  <p
+                    role={submitStatus.type === 'error' ? 'alert' : 'status'}
+                    className={`rounded-md border px-4 py-3 text-sm leading-6 ${
+                      submitStatus.type === 'success'
+                        ? 'border-cyan-200/20 bg-cyan-200/10 text-cyan-50'
+                        : 'border-red-300/25 bg-red-400/10 text-red-100'
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </p>
+                )}
 
                 <p className="text-sm leading-6 text-white/48">
                   This prepares your consultation request. CampE will review the
