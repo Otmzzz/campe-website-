@@ -10,7 +10,7 @@ export function Footer() {
     { label: 'Process', href: '#process' },
   ];
 
-  const email = 'contact@campetechnologies.com';
+  const email = 'help.campe@outlook.com';
 
   return (
     <footer className="relative overflow-hidden border-t border-slate-200 bg-[#f8fbfd] px-5 py-16 text-[#07111f] sm:px-8 lg:px-10">
