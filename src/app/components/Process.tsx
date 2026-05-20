@@ -69,12 +69,12 @@ export function Process() {
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
             <div>
               <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 backdrop-blur-xl">
-                <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
+                <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/58">
                   Engagement Model
                 </span>
               </div>
 
-              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
+              <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.15rem]">
                 From diagnosis to stable operating rhythm.
               </h2>
             </div>
@@ -99,12 +99,12 @@ export function Process() {
                       <Icon size={18} />
                     </div>
 
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/38">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/38">
                       Stage {stage.stage}
                     </span>
                   </div>
 
-                  <h3 className="mt-7 text-3xl font-semibold tracking-[-0.04em] text-white">
+                  <h3 className="mt-7 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white">
                     {stage.title}
                   </h3>
 
@@ -137,10 +137,10 @@ export function Process() {
               </div>
 
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-200/70">
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-200/68">
                   Implementation discipline
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-[-0.025em] text-white">
+                <h3 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.01em] text-white">
                   Change is treated as an operating system, not a handoff.
                 </h3>
               </div>

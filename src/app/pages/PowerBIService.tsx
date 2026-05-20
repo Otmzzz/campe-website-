@@ -3,24 +3,17 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const dashboardImages = [
   {
-    src: '/powerbi/dashboard-1.png',
+    src: '/powerbi/dashboardV2-1.png',
     alt: 'Power BI dashboard reference showing business performance metrics',
   },
   {
-    src: '/powerbi/dashboard-2.jpg',
+    src: '/powerbi/dashboardV2-2.png',
     alt: 'Power BI dashboard reference showing operational reporting views',
   },
   {
-    src: '/powerbi/dashboard-3.png',
+    src: '/powerbi/dashboardV2-3.png',
     alt: 'Power BI dashboard reference showing executive KPI reporting',
   },
-];
-
-const reportingFocus = [
-  'Sales visibility',
-  'Inventory movement',
-  'Workflow status',
-  'Leadership control',
 ];
 
 const approachItems = [
@@ -71,7 +64,7 @@ function DashboardCarousel() {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 lg:mt-0">
       <div className="relative overflow-hidden rounded-lg border border-white/10 bg-black/20">
         <div className="relative aspect-[16/10] w-full sm:aspect-[16/9]">
           {dashboardImages.map((image, index) => (
@@ -79,7 +72,7 @@ function DashboardCarousel() {
               key={image.src}
               src={image.src}
               alt={image.alt}
-              className={`absolute inset-0 h-full w-full object-contain p-2 transition-all duration-700 ease-out sm:p-3 ${
+              className={`absolute inset-0 h-full w-full object-contain p-1.5 transition-all duration-700 ease-out sm:p-2 ${
                 index === activeIndex
                   ? 'translate-x-0 opacity-100'
                   : index < activeIndex
@@ -124,13 +117,13 @@ export function PowerBIService() {
     <main className="relative">
       <section className="relative overflow-hidden border-b border-white/10 bg-[#06101d] pt-40 sm:pt-44 lg:pt-48">
         <div className="absolute inset-x-0 top-0 h-px bg-cyan-200/30" />
-        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 pb-20 sm:px-7 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:pb-24">
+        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 pb-20 sm:px-7 lg:max-w-[1320px] lg:grid-cols-[minmax(360px,0.74fr)_minmax(0,1.36fr)] lg:items-center lg:gap-10 lg:px-10 lg:pb-24 xl:max-w-[1380px]">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/85">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
               CAMPE SERVICE LINE
             </p>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[56px]">
               Power BI Development for Operational Control
             </h1>
 
@@ -139,48 +132,22 @@ export function PowerBIService() {
               sales, inventory, workflow, and performance issues before they
               become hidden operational problems.
             </p>
-
-            <a
-              href="#finalcta"
-              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-bold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
-            >
-              Book Consultation
-              <ArrowRight
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </a>
           </div>
 
-          <div className="border-y border-white/10 py-7 lg:self-end">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-cyan-100/70">
-              Reporting Focus
-            </p>
-            <div className="mt-6 space-y-5">
-              {reportingFocus.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center justify-between border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
-                >
-                  <span className="text-[15px] font-bold text-white">
-                    {item}
-                  </span>
-                  <ArrowRight size={16} className="text-cyan-200/70" />
-                </div>
-              ))}
-            </div>
+          <div className="lg:self-center">
+            <DashboardCarousel />
           </div>
         </div>
       </section>
 
       <section className="border-b border-white/10 bg-[#07111f]">
         <div className="mx-auto grid max-w-[1240px] gap-10 px-5 py-16 sm:px-7 lg:grid-cols-[0.72fr_1.28fr] lg:px-10 lg:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
             The Problem
           </p>
 
           <div>
-            <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               Data exists. Control is still missing.
             </h2>
             <p className="mt-6 max-w-3xl text-[16px] leading-8 text-slate-300">
@@ -194,33 +161,13 @@ export function PowerBIService() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#07111f]">
-        <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
-          <div className="max-w-4xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
-              Dashboard References
-            </p>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
-              A control view should be readable before it is impressive.
-            </h2>
-            <p className="mt-6 text-[16px] leading-8 text-slate-300">
-              The dashboards we build are designed for management review:
-              clear measures, visible movement, and enough context for leaders
-              to decide what needs attention without digging through files.
-            </p>
-          </div>
-
-          <DashboardCarousel />
-        </div>
-      </section>
-
       <section className="border-b border-white/10 bg-[#081625]">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="max-w-4xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               CampE Approach
             </p>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               From scattered sources to a usable review system.
             </h2>
             <p className="mt-6 text-[16px] leading-8 text-slate-300">
@@ -236,10 +183,10 @@ export function PowerBIService() {
                 key={item}
                 className="flex flex-col gap-2 border-b border-white/10 py-5 sm:flex-row sm:items-baseline sm:gap-8"
               >
-                <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-cyan-200/60 sm:w-16">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-cyan-200/60 sm:w-16">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="text-[15px] font-bold text-slate-100">
+                <span className="text-[15px] font-semibold text-slate-100">
                   {item}
                 </span>
               </div>
@@ -251,10 +198,10 @@ export function PowerBIService() {
       <section className="border-b border-white/10 bg-[#07111f]">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="max-w-4xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               Deliverables
             </p>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               Practical assets your team can review and maintain.
             </h2>
             <p className="mt-6 text-[16px] leading-8 text-slate-300">
@@ -268,7 +215,7 @@ export function PowerBIService() {
             {deliverables.map((item) => (
               <div
                 key={item}
-                className="border-b border-white/10 py-5 text-[15px] font-bold text-slate-100"
+                className="border-b border-white/10 py-5 text-[15px] font-semibold text-slate-100"
               >
                 {item}
               </div>
@@ -280,10 +227,10 @@ export function PowerBIService() {
       <section className="border-b border-white/10 bg-[#081625]">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="max-w-4xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               Best Fit
             </p>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               Built for teams that need clearer operating signals.
             </h2>
             <p className="mt-6 text-[16px] leading-8 text-slate-300">
@@ -299,7 +246,7 @@ export function PowerBIService() {
                 key={item}
                 className="flex items-center justify-between gap-6 border-b border-white/10 py-5"
               >
-                <span className="text-[15px] font-bold text-slate-100">
+                <span className="text-[15px] font-semibold text-slate-100">
                   {item}
                 </span>
                 <ArrowRight size={16} className="shrink-0 text-cyan-200/70" />
@@ -312,17 +259,17 @@ export function PowerBIService() {
       <section className="bg-[#06101d]">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-7 px-5 py-16 sm:px-7 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               Next Step
             </p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               Need a clearer control view?
             </h2>
           </div>
 
           <a
             href="#finalcta"
-            className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-bold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
+            className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Book Consultation
             <ArrowRight

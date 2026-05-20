@@ -79,12 +79,12 @@ Thank you.`
             {/* LEFT PANEL */}
             <div className="p-6 sm:p-8 lg:p-10">
               <div className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2">
-                <span className="text-xs font-medium uppercase tracking-[0.22em] text-white/60">
+                <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/58">
                   Systems Review Request
                 </span>
               </div>
 
-              <h2 className="max-w-xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.35rem] lg:leading-[1.05]">
+              <h2 className="max-w-xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.1rem]">
                 Start with the operating issue.
                 <span className="block text-white/55">
                   Then define the right first step.
@@ -128,7 +128,7 @@ Thank you.`
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-200/70">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-200/68">
                     Review Intake
                   </p>
                   <h3 className="mt-1 text-2xl font-semibold text-white">

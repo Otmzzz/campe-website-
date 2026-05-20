@@ -23,11 +23,11 @@ export function Footer() {
         <div className="mb-12 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700/70">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700/70">
                 CampE Technologies
               </p>
 
-              <h3 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-4xl">
+              <h3 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-4xl">
                 Clarify the operating structure before complexity slows the business.
               </h3>
             </div>
@@ -46,11 +46,11 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.65fr_1fr]">
           {/* Brand Column */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700/75">
               CampE Technologies
             </p>
 
-            <h4 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#07111f]">
+            <h4 className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f]">
               Structured systems for modern organizations.
             </h4>
 
@@ -63,7 +63,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-700">
+            <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-700">
               Explore
             </h4>
 
@@ -82,7 +82,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-700">
+            <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-700">
               Contact
             </h4>
 

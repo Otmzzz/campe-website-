@@ -40,7 +40,7 @@ export function WhyCampE() {
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-14">
             <div className="lg:pt-16">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+              <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                 Consulting Principles
               </p>
 
@@ -51,7 +51,7 @@ export function WhyCampE() {
               </p>
             </div>
 
-            <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:justify-self-end lg:text-[3.45rem] lg:leading-[1.05]">
+            <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:justify-self-end lg:text-[3.15rem]">
               CampE designs from operating discipline,
               <span className="block text-slate-500">not tool preference.</span>
             </h2>
@@ -66,7 +66,7 @@ export function WhyCampE() {
                   index % 2 === 1 ? 'lg:pt-10' : ''
                 }`}
               >
-                <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#07111f] sm:text-3xl">
+                <h3 className="text-2xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-3xl">
                   {principle.title}
                 </h3>
 

@@ -78,12 +78,12 @@ export function Solutions() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
               <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Solution Areas
                 </span>
               </div>
 
-              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.45rem] lg:leading-[1.05]">
+              <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.15rem]">
                 Systems work for organizations that need control,
                 <span className="block text-slate-500">not another tool layer.</span>
               </h2>
@@ -109,18 +109,18 @@ export function Solutions() {
                       <Icon size={19} />
                     </div>
 
-                    <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-slate-500">
                       {area.eyebrow}
                     </span>
                   </div>
 
-                  <h3 className="mt-7 max-w-xl text-2xl font-semibold tracking-[-0.025em] text-[#07111f] sm:text-3xl">
+                  <h3 className="mt-7 max-w-xl text-2xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-3xl">
                     {area.title}
                   </h3>
 
                   <div className="mt-6 grid gap-4">
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
                         Designed for
                       </p>
                       <p className="mt-2 text-sm leading-7 text-slate-500 sm:text-[15px]">
@@ -129,7 +129,7 @@ export function Solutions() {
                     </div>
 
                     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-700/70">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-700/70">
                         CampE structures
                       </p>
                       <p className="mt-2 text-sm leading-7 text-slate-700 sm:text-[15px]">

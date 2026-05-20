@@ -48,14 +48,14 @@ export function Hero() {
         <div className="text-center lg:text-left">
           <Reveal>
             <div className="mx-auto mb-7 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 backdrop-blur-xl lg:mx-0">
-              <span className="text-xs font-medium tracking-[0.18em] text-white/70">
+              <span className="text-[11px] font-medium tracking-[0.14em] text-white/68">
                 BUSINESS SYSTEMS & GOVERNANCE CONSULTING
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mx-auto max-w-4xl text-[2.55rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-[5rem]">
+            <h1 className="mx-auto max-w-4xl text-[2.45rem] font-semibold leading-tight tracking-[-0.015em] text-white sm:text-5xl md:text-6xl lg:mx-0 lg:text-[4.35rem]">
               Turning operational complexity into controlled systems.
             </h1>
           </Reveal>
@@ -112,7 +112,7 @@ export function Hero() {
                 <motion.div
                   key={item.label}
                   whileHover={{ y: -4 }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl sm:p-5"
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl sm:p-5"
                 >
                   <p className="text-2xl font-semibold text-white sm:text-3xl">
                     <AnimatedCounter value={item.value} suffix={item.suffix} />
@@ -134,11 +134,11 @@ export function Hero() {
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div className="border-b border-white/10 px-5 py-4 sm:px-7">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-cyan-200/75">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
                   CampE Operating Architecture
                 </p>
 
-                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+                <h3 className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-3xl">
                   One control view for work that cannot stay scattered.
                 </h3>
 
@@ -151,7 +151,7 @@ export function Hero() {
               <div className="grid gap-px bg-white/10 sm:grid-cols-2">
                 {focusAreas.map((area) => (
                   <div key={area} className="bg-[#0a1524]/95 p-5 sm:p-6">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/38">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/38">
                       Aligned domain
                     </p>
                     <p className="mt-3 text-xl font-semibold text-white">
@@ -175,7 +175,7 @@ export function Hero() {
                 </div>
 
                 <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/38">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/38">
                     Platform alignment
                   </p>
 

@@ -39,11 +39,11 @@ export function Testimonials() {
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
             <div>
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+              <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                 Operational Outcomes
               </p>
 
-              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.35rem] lg:leading-[1.05]">
+              <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.1rem]">
                 The work should leave better operating evidence behind.
               </h2>
             </div>
@@ -69,11 +69,11 @@ export function Testimonials() {
                       : 'lg:ml-10 lg:max-w-3xl'
                   }`}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                     Outcome {String(index + 1).padStart(2, '0')}
                   </p>
 
-                  <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-[#07111f] sm:text-3xl">
+                  <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-3xl">
                     {item.title}
                   </h3>
 

@@ -205,7 +205,7 @@ export function Navbar() {
         {/* TOP BAR */}
         <div className="hidden border-b border-white/10 bg-[#020712]/85 lg:block">
           <div className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-1.5 text-[11px] text-white/65">
-            <p className="tracking-[0.18em] text-cyan-100/80">
+            <p className="tracking-[0.14em] text-cyan-100/75">
               SYSTEMS INTELLIGENCE CONSULTING
             </p>
 
@@ -216,7 +216,7 @@ export function Navbar() {
 
               <a
                 href="#finalcta"
-                className="font-semibold text-cyan-100 transition hover:text-white"
+                className="font-medium text-cyan-100 transition hover:text-white"
               >
                 Contact Us
               </a>
@@ -254,7 +254,7 @@ export function Navbar() {
           <div className="hidden items-center lg:flex">
             <a
               href="#finalcta"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white px-5 py-2.5 text-[13px] font-bold text-[#06101d] shadow-md shadow-black/15 transition hover:-translate-y-0.5 hover:bg-cyan-50"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white px-5 py-2.5 text-[13px] font-semibold text-[#06101d] shadow-md shadow-black/15 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
               Book Consultation
               <ArrowRight
@@ -267,7 +267,7 @@ export function Navbar() {
           {/* MOBILE CTA */}
           <a
             href="#finalcta"
-            className="hidden rounded-full bg-white px-4 py-2.5 text-[12px] font-bold text-[#06101d] shadow-md shadow-black/15 sm:inline-flex lg:hidden"
+            className="hidden rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold text-[#06101d] shadow-md shadow-black/15 sm:inline-flex lg:hidden"
           >
             Consult
           </a>
@@ -309,7 +309,7 @@ export function Navbar() {
                 <div className="flex h-[96px] items-center justify-between border-b border-slate-200 px-7">
                   <button
                     onClick={closeMenu}
-                    className="group inline-flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.18em] text-slate-700 transition hover:text-slate-950"
+                    className="group inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-700 transition hover:text-slate-950"
                     aria-label="Close menu"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 transition group-hover:border-slate-300 group-hover:bg-slate-50">
@@ -320,7 +320,7 @@ export function Navbar() {
                 </div>
 
                 <div className="flex-1 overflow-y-auto px-7 py-8">
-                  <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-700">
+                  <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
                     CampE Navigation
                   </p>
 
@@ -345,7 +345,7 @@ export function Navbar() {
                             }`}
                           >
                             <span>
-                              <span className="block text-[16px] font-black uppercase tracking-[0.08em]">
+                              <span className="block text-[16px] font-semibold uppercase tracking-[0.06em]">
                                 {group.label}
                               </span>
                               <span
@@ -383,7 +383,7 @@ export function Navbar() {
                                       key={item.label}
                                       href={item.href}
                                       onClick={closeMenu}
-                                      className="flex items-center justify-between gap-4 py-3 text-[13px] font-bold text-slate-800 transition hover:text-cyan-800"
+                                      className="flex items-center justify-between gap-4 py-3 text-[13px] font-semibold text-slate-800 transition hover:text-cyan-800"
                                     >
                                       <span>
                                         <span className="block">{item.label}</span>
@@ -422,11 +422,11 @@ export function Navbar() {
                     className="hidden h-full flex-1 flex-col bg-[#f8fafc] lg:flex"
                   >
                     <div className="border-b border-slate-200 px-10 py-9">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-700">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
                         Explore
                       </p>
 
-                      <h3 className="mt-4 text-3xl font-black tracking-tight text-slate-950">
+                      <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.01em] text-slate-950">
                         {activeMegaGroup.label}
                       </h3>
 
@@ -446,7 +446,7 @@ export function Navbar() {
                           >
                             <div className="flex items-start justify-between gap-5">
                               <div>
-                                <h4 className="text-[16px] font-black text-slate-950 transition group-hover:text-cyan-800">
+                                <h4 className="text-[16px] font-semibold text-slate-950 transition group-hover:text-cyan-800">
                                   {item.label}
                                 </h4>
 

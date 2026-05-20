@@ -50,13 +50,13 @@ export function Industries() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="flex justify-center">
               <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 shadow-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Operating Environments
                 </span>
               </div>
             </div>
 
-            <h2 className="mx-auto max-w-4xl text-4xl font-semibold tracking-[-0.035em] text-[#07111f] sm:text-5xl lg:text-[3.35rem] lg:leading-[1.05]">
+            <h2 className="mx-auto max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.1rem]">
               Built for environments where work moves across people, places, and pressure.
             </h2>
 
@@ -83,16 +83,16 @@ export function Industries() {
 
                   <div className="relative z-10 flex h-full max-w-xl flex-col">
                     <div className="flex items-start justify-between gap-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-200/80">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-200/75">
                         {environment.label}
                       </p>
 
-                      <span className="text-[11px] font-semibold tracking-[0.18em] text-white/35">
+                      <span className="text-[11px] font-medium tracking-[0.14em] text-white/35">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
 
-                    <h3 className="mt-6 text-3xl font-semibold tracking-[-0.035em] text-white sm:text-[2rem] lg:min-h-[76px]">
+                    <h3 className="mt-6 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2rem] lg:min-h-[76px]">
                       {environment.title}
                     </h3>
 

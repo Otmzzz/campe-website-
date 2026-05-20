@@ -39,11 +39,11 @@ export function CampEPageLayout({
         <div className="absolute inset-x-0 top-0 h-px bg-cyan-200/30" />
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 pb-20 sm:px-7 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:pb-24">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/85">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
               {label}
             </p>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[56px]">
               {title}
             </h1>
 
@@ -53,7 +53,7 @@ export function CampEPageLayout({
 
             <a
               href="#finalcta"
-              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-bold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
+              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
               Book Consultation
               <ArrowRight
@@ -64,7 +64,7 @@ export function CampEPageLayout({
           </div>
 
           <div className="border-y border-white/10 py-7 lg:self-end">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-cyan-100/70">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-cyan-100/65">
               {focusLabel}
             </p>
             <div className="mt-6 space-y-5">
@@ -73,7 +73,7 @@ export function CampEPageLayout({
                   key={item}
                   className="flex items-center justify-between border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
                 >
-                  <span className="text-[15px] font-bold text-white">{item}</span>
+                  <span className="text-[15px] font-semibold text-white">{item}</span>
                   <ArrowRight size={16} className="text-cyan-200/70" />
                 </div>
               ))}
@@ -84,12 +84,12 @@ export function CampEPageLayout({
 
       <section className="border-b border-white/10 bg-[#07111f]">
         <div className="mx-auto grid max-w-[1240px] gap-10 px-5 py-16 sm:px-7 lg:grid-cols-[0.72fr_1.28fr] lg:px-10 lg:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
             The Problem
           </p>
 
           <div>
-            <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               {problemTitle}
             </h2>
             <p className="mt-6 max-w-3xl text-[16px] leading-8 text-slate-300">
@@ -103,10 +103,10 @@ export function CampEPageLayout({
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
                 CampE Approach
               </p>
-              <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
                 {approachTitle}
               </h2>
             </div>
@@ -118,7 +118,7 @@ export function CampEPageLayout({
                   className="flex items-center gap-4 border-b border-white/10 py-5"
                 >
                   <CheckCircle2 size={18} className="shrink-0 text-cyan-200" />
-                  <span className="text-[15px] font-bold text-slate-100">
+                  <span className="text-[15px] font-semibold text-slate-100">
                     {item}
                   </span>
                 </div>
@@ -131,10 +131,10 @@ export function CampEPageLayout({
       <section className="border-b border-white/10 bg-[#07111f]">
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-16 sm:px-7 lg:grid-cols-2 lg:px-10 lg:py-20">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               Deliverables
             </p>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               {deliverablesTitle}
             </h2>
           </div>
@@ -143,7 +143,7 @@ export function CampEPageLayout({
             {deliverables.map((item) => (
               <div
                 key={item}
-                className="border-b border-white/10 py-5 text-[15px] font-bold text-slate-100"
+                className="border-b border-white/10 py-5 text-[15px] font-semibold text-slate-100"
               >
                 {item}
               </div>
@@ -155,10 +155,10 @@ export function CampEPageLayout({
       <section className="border-b border-white/10 bg-[#081625]">
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-16 sm:px-7 lg:grid-cols-[0.78fr_1.22fr] lg:px-10 lg:py-20">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               Best Fit
             </p>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               {bestFitTitle}
             </h2>
           </div>
@@ -169,7 +169,7 @@ export function CampEPageLayout({
                 key={item}
                 className="flex items-center justify-between gap-6 border-b border-white/10 py-5"
               >
-                <span className="text-[15px] font-bold text-slate-100">
+                <span className="text-[15px] font-semibold text-slate-100">
                   {item}
                 </span>
                 <ArrowRight size={16} className="shrink-0 text-cyan-200/70" />
@@ -182,17 +182,17 @@ export function CampEPageLayout({
       <section className="bg-[#06101d]">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-7 px-5 py-16 sm:px-7 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200/75">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
               Next Step
             </p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
               {ctaTitle}
             </h2>
           </div>
 
           <a
             href="#finalcta"
-            className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-bold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
+            className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Book Consultation
             <ArrowRight
