@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { ScrollProgress } from './components/ScrollProgress';
 import { CursorGlow } from './components/CursorGlow';
 import { Navbar } from './components/Navbar';
+import { ConsultationPanel } from './components/ConsultationPanel';
 import { Hero } from './components/Hero';
 import { TrustSection } from './components/TrustSection';
 import { WhyCampE } from './components/WhyCampE';
@@ -31,14 +33,17 @@ const routes = {
 };
 
 export default function App() {
+  const [isConsultationPanelOpen, setIsConsultationPanelOpen] = useState(false);
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
   const RoutedPage = routes[pathname as keyof typeof routes];
+  const openConsultationPanel = () => setIsConsultationPanelOpen(true);
+  const closeConsultationPanel = () => setIsConsultationPanelOpen(false);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#07111f] text-white">
       <ScrollProgress />
       <CursorGlow />
-      <Navbar />
+      <Navbar onConsultationClick={openConsultationPanel} />
       {RoutedPage ? (
         <RoutedPage />
       ) : (
@@ -52,8 +57,12 @@ export default function App() {
           <Testimonials />
         </>
       )}
-      <FinalCTA />
+      <FinalCTA onConsultationClick={openConsultationPanel} />
       <Footer />
+      <ConsultationPanel
+        isOpen={isConsultationPanelOpen}
+        onClose={closeConsultationPanel}
+      />
     </div>
   );
 }

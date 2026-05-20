@@ -22,7 +22,11 @@ type MegaMenuGroup = {
   items: MegaMenuItem[];
 };
 
-export function Navbar() {
+type NavbarProps = {
+  onConsultationClick: () => void;
+};
+
+export function Navbar({ onConsultationClick }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -259,25 +263,23 @@ export function Navbar() {
               Home
             </a>
 
-            <a
-              href="#finalcta"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white px-5 py-2.5 text-[13px] font-semibold text-[#06101d] shadow-md shadow-black/15 transition hover:-translate-y-0.5 hover:bg-cyan-50"
+            <button
+              type="button"
+              onClick={onConsultationClick}
+              className="inline-flex items-center rounded-full border border-white/15 bg-white px-5 py-2.5 text-[13px] font-semibold text-[#06101d] shadow-md shadow-black/15 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
               Book Consultation
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </a>
+            </button>
           </div>
 
           {/* MOBILE CTA */}
-          <a
-            href="#finalcta"
+          <button
+            type="button"
+            onClick={onConsultationClick}
             className="hidden rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold text-[#06101d] shadow-md shadow-black/15 sm:inline-flex lg:hidden"
           >
             Consult
-          </a>
+          </button>
         </div>
 
         {/* CAMP-E ACCENT LINE */}
