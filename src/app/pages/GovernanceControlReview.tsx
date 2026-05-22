@@ -14,7 +14,6 @@ type CampEPageLayoutProps = {
   deliverables: string[];
   bestFitTitle: string;
   bestFit: string[];
-  ctaTitle: string;
 };
 
 export function CampEPageLayout({
@@ -31,7 +30,6 @@ export function CampEPageLayout({
   deliverables,
   bestFitTitle,
   bestFit,
-  ctaTitle,
 }: CampEPageLayoutProps) {
   return (
     <main className="relative">
@@ -50,17 +48,6 @@ export function CampEPageLayout({
             <p className="mt-7 max-w-3xl text-[17px] leading-8 text-slate-300 sm:text-[18px]">
               {subtitle}
             </p>
-
-            <a
-              href="#finalcta"
-              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
-            >
-              Book Consultation
-              <ArrowRight
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </a>
           </div>
 
           <div className="border-y border-white/10 py-7 lg:self-end">
@@ -178,30 +165,6 @@ export function CampEPageLayout({
           </div>
         </div>
       </section>
-
-      <section className="bg-[#06101d]">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-7 px-5 py-16 sm:px-7 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
-              Next Step
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
-              {ctaTitle}
-            </h2>
-          </div>
-
-          <a
-            href="#finalcta"
-            className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
-          >
-            Book Consultation
-            <ArrowRight
-              size={17}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </a>
-        </div>
-      </section>
     </main>
   );
 }
@@ -247,7 +210,6 @@ export function GovernanceControlReview() {
         'Operations with recurring exceptions',
         'Leadership teams preparing for better governance',
       ]}
-      ctaTitle="Need clearer operational control?"
     />
   );
 }

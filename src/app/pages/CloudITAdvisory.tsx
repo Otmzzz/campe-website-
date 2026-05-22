@@ -41,7 +41,6 @@ export function CloudITAdvisory() {
         'Operations relying on manual deployment practices',
         'Leadership teams preparing for stronger IT governance',
       ]}
-      ctaTitle="Need clearer technology control?"
     />
   );
 }

@@ -41,7 +41,6 @@ export function RiskVisibility() {
         'Owners concerned about access and accountability',
         'Leadership groups preparing for stronger governance',
       ]}
-      ctaTitle="Need clearer risk visibility?"
     />
   );
 }

@@ -41,7 +41,6 @@ export function ProcessMapping() {
         'Owners needing clearer accountability',
         'Organizations preparing for system or dashboard design',
       ]}
-      ctaTitle="Need to see how work really moves?"
     />
   );
 }

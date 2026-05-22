@@ -1,7 +1,4 @@
-import {
-  ArrowRight,
-  CheckCircle2,
-} from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function Industries() {
@@ -111,17 +108,6 @@ export function Industries() {
                         </div>
                       ))}
                     </div>
-
-                    <a
-                      href="#finalcta"
-                      className="group/link mt-auto inline-flex w-fit items-center gap-2 pt-8 text-sm font-semibold text-white transition hover:text-cyan-200"
-                    >
-                      Discuss this environment
-                      <ArrowRight
-                        size={15}
-                        className="transition-transform group-hover/link:translate-x-0.5"
-                      />
-                    </a>
                   </div>
                 </div>
               </Reveal>

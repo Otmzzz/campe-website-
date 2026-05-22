@@ -8,7 +8,6 @@ import { TrustSection } from './components/TrustSection';
 import { WhyCampE } from './components/WhyCampE';
 import { Solutions } from './components/Solutions';
 import { Industries } from './components/Industries';
-import { Process } from './components/Process';
 import { Testimonials } from './components/Testimonials';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
@@ -52,7 +51,6 @@ export default function App() {
           <TrustSection />
           <Solutions />
           <WhyCampE />
-          <Process />
           <Industries />
           <Testimonials />
         </>

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Copy, Mail, MapPin } from 'lucide-react';
+import { Copy, Mail, MapPin } from 'lucide-react';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -19,29 +19,6 @@ export function Footer() {
       <div className="absolute bottom-[-180px] right-[-120px] h-[420px] w-[420px] rounded-full bg-blue-100 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
-        {/* Top CTA */}
-        <div className="mb-12 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700/70">
-                CampE Technologies
-              </p>
-
-              <h3 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-4xl">
-                Clarify the operating structure before complexity slows the business.
-              </h3>
-            </div>
-
-            <a
-              href="#finalcta"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#07111f] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#10243d]"
-            >
-              Start a conversation
-              <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </div>
-
         {/* Main Footer */}
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.65fr_1fr]">
           {/* Brand Column */}

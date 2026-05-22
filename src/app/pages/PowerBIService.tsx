@@ -255,30 +255,6 @@ export function PowerBIService() {
           </div>
         </div>
       </section>
-
-      <section className="bg-[#06101d]">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-7 px-5 py-16 sm:px-7 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
-              Next Step
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
-              Need a clearer control view?
-            </h2>
-          </div>
-
-          <a
-            href="#finalcta"
-            className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#06101d] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
-          >
-            Book Consultation
-            <ArrowRight
-              size={17}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </a>
-        </div>
-      </section>
     </main>
   );
 }

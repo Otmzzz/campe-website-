@@ -217,13 +217,6 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
               <a href="#why-campe" className="transition hover:text-white">
                 Need clarity?
               </a>
-
-              <a
-                href="#finalcta"
-                className="font-medium text-cyan-100 transition hover:text-white"
-              >
-                Contact Us
-              </a>
             </div>
           </div>
         </div>

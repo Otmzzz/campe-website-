@@ -41,7 +41,6 @@ export function BusinessClaritySystems() {
         'Businesses preparing for dashboards or governance',
         'Management teams needing one operating view',
       ]}
-      ctaTitle="Need a clearer business view?"
     />
   );
 }

@@ -41,7 +41,6 @@ export function ControlDashboards() {
         'Owners needing faster exception visibility',
         'Management teams improving accountability',
       ]}
-      ctaTitle="Need dashboards built for control?"
     />
   );
 }

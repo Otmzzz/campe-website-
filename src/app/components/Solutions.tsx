@@ -1,70 +1,26 @@
-import {
-  ArrowRight,
-  BarChart3,
-  CheckCircle2,
-  Network,
-  ShieldCheck,
-  Workflow,
-} from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function Solutions() {
   const solutionAreas = [
     {
-      icon: Workflow,
-      eyebrow: '01 / Operations',
       title: 'Workflow & Operations Structuring',
-      pressure:
-        'Fragmented processes, unclear handoffs, manual tracking, and work that depends too heavily on informal follow-ups.',
-      outcome:
-        'CampE defines how work should move across teams, roles, approvals, and operating checkpoints.',
-      focus: [
-        'Workflow mapping and role clarity',
-        'Handoff, approval, and escalation paths',
-        'Practical operating standards for daily execution',
-      ],
+      description:
+        'Clarify how work moves across roles, handoffs, approvals, and recurring operating checkpoints so execution is easier to manage.',
     },
     {
-      icon: ShieldCheck,
-      eyebrow: '02 / Governance',
       title: 'Governance & Control Systems',
-      pressure:
-        'Approval paths, accountability, documentation, and execution discipline are often inconsistent as teams grow.',
-      outcome:
-        'CampE structures control points so leaders can see ownership, enforce discipline, and reduce operational drift.',
-      focus: [
-        'Accountability and approval design',
-        'Documentation and control requirements',
-        'Execution discipline across teams and locations',
-      ],
+      description:
+        'Define accountability, documentation, approval discipline, and control points that keep decisions visible as teams grow.',
     },
     {
-      icon: BarChart3,
-      eyebrow: '03 / Visibility',
       title: 'Data Visibility & Decision Intelligence',
-      pressure:
-        'Reports, spreadsheets, operating records, and KPI signals are scattered across tools and people.',
-      outcome:
-        'CampE designs reporting layers and dashboards that give leadership a clearer view of movement, risk, and performance.',
-      focus: [
-        'Dashboard and KPI architecture',
-        'Management reporting layers',
-        'Decision signals from operational data',
-      ],
+      description:
+        'Shape reporting layers, dashboards, and decision signals so leadership can see movement, risk, and performance with less noise.',
     },
     {
-      icon: Network,
-      eyebrow: '04 / Coordination',
       title: 'Emergency & Field Coordination Systems',
-      pressure:
-        'Incident flow, field updates, escalation, and resolution tracking become difficult without a structured coordination model.',
-      outcome:
-        'CampE helps define response workflows, visibility layers, and lifecycle tracking for time-sensitive operations.',
-      focus: [
-        'Incident intake and escalation flow',
-        'Coordination visibility for field teams',
-        'Status, resolution, and lifecycle tracking',
-      ],
+      description:
+        'Structure incident flow, field updates, escalation, and resolution tracking for operations where timing and coordination matter.',
     },
   ];
 
@@ -73,97 +29,43 @@ export function Solutions() {
       id="solutions"
       className="relative overflow-hidden border-y border-slate-200 bg-[#f8fbfd] px-5 py-24 text-[#07111f] sm:px-8 lg:px-10 lg:py-32"
     >
-      <div className="relative z-10 mx-auto max-w-[1280px]">
-        <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <div className="mb-6 inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-                  Solution Areas
-                </span>
-              </div>
+      <div className="relative z-10 mx-auto max-w-[1180px]">
+        <div className="grid gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
+          <Reveal>
+            <div className="lg:sticky lg:top-32">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                Solution Areas
+              </p>
 
-              <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.15rem]">
-                Systems work for organizations that need control,
-                <span className="block text-slate-500">not another tool layer.</span>
+              <h2 className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.05rem]">
+                Systems work for organizations that need control, not another
+                tool layer.
               </h2>
+
+              <p className="mt-7 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+                CampE structures the operating model behind the technology: how
+                work moves, who owns decisions, what data leadership needs, and
+                how coordination stays visible when pressure increases.
+              </p>
             </div>
+          </Reveal>
 
-            <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:justify-self-end">
-              CampE structures the operating model behind the technology: how
-              work moves, who owns decisions, what data leadership needs, and
-              how coordination stays visible when pressure increases.
-            </p>
-          </div>
-        </Reveal>
-
-        <div className="mt-14 grid gap-5 lg:grid-cols-2">
-          {solutionAreas.map((area, index) => {
-            const Icon = area.icon;
-
-            return (
-              <Reveal key={area.title} delay={index * 0.06}>
-                <div className="group flex h-full flex-col rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-500 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl sm:p-7 lg:p-8">
-                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-[#07111f] text-cyan-200 shadow-sm">
-                      <Icon size={19} />
-                    </div>
-
-                    <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-slate-500">
-                      {area.eyebrow}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-7 max-w-xl text-2xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-3xl">
+          <div className="border-t border-slate-200">
+            {solutionAreas.map((area, index) => (
+              <Reveal key={area.title} delay={index * 0.05}>
+                <article className="border-b border-slate-200 py-8 sm:py-9">
+                  <h3 className="text-2xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f]">
                     {area.title}
                   </h3>
 
-                  <div className="mt-6 grid gap-4">
-                    <div>
-                      <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
-                        Designed for
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-slate-500 sm:text-[15px]">
-                        {area.pressure}
-                      </p>
-                    </div>
+                  <p className="mt-4 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base">
+                    {area.description}
+                  </p>
 
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                      <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-700/70">
-                        CampE structures
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-slate-700 sm:text-[15px]">
-                        {area.outcome}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {area.focus.map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-start gap-3 text-sm leading-6 text-slate-600"
-                      >
-                        <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-cyan-700" />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-
-                  <a
-                    href="#finalcta"
-                    className="group/link mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#07111f] transition hover:text-cyan-700"
-                  >
-                    Discuss this solution area
-                    <ArrowRight
-                      size={15}
-                      className="transition-transform group-hover/link:translate-x-0.5"
-                    />
-                  </a>
-                </div>
+                </article>
               </Reveal>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

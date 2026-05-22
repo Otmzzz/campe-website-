@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export function Testimonials() {
@@ -94,22 +93,11 @@ export function Testimonials() {
         </div>
 
         <Reveal delay={0.2}>
-          <div className="mt-12 flex flex-col gap-5 border-t border-slate-200 pt-7 lg:flex-row lg:items-center lg:justify-between">
+          <div className="mt-12 border-t border-slate-200 pt-7">
             <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
               Outcomes depend on operational adoption, leadership follow-through,
               and the discipline to keep the model current after rollout.
             </p>
-
-            <a
-              href="#finalcta"
-              className="group inline-flex w-fit items-center gap-2 rounded-full bg-[#07111f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#10243d]"
-            >
-              Discuss your operations
-              <ArrowRight
-                size={15}
-                className="transition-transform group-hover:translate-x-0.5"
-              />
-            </a>
           </div>
         </Reveal>
       </div>

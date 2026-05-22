@@ -41,7 +41,6 @@ export function SystemsArchitecture() {
         'Businesses preparing for dashboard or system builds',
         'Teams improving governance and accountability',
       ]}
-      ctaTitle="Need a clearer operating structure?"
     />
   );
 }
