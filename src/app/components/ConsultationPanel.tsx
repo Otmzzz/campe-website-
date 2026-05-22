@@ -44,9 +44,9 @@ const initialForm: ConsultationForm = {
 };
 
 const fieldBase =
-  'w-full rounded-2xl border border-white/15 bg-white/[0.07] px-5 py-4 text-white outline-none transition placeholder:text-white/35 focus:border-cyan-300/70 focus:ring-2 focus:ring-cyan-300/15';
+  'w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10';
 
-const labelBase = 'mb-2 block text-[12px] font-medium text-white/72';
+const labelBase = 'mb-2 block text-sm font-medium text-slate-700';
 
 export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
   const [form, setForm] = useState<ConsultationForm>(initialForm);
@@ -139,7 +139,7 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
           <motion.button
             type="button"
             aria-label="Close consultation request"
-            className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
+            className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -151,44 +151,44 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="consultation-panel-title"
-            className="relative z-10 flex max-h-[88vh] w-[calc(100%-24px)] max-w-[740px] flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#07111f] text-white shadow-2xl shadow-black/45 sm:w-full"
+            className="relative z-10 flex max-h-[88vh] w-[calc(100%-24px)] max-w-[680px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-slate-950/30 sm:w-full"
             initial={{ opacity: 0, y: 18, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
             transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative flex h-[96px] items-center justify-center border-b border-white/10 px-6">
+            <div className="relative flex min-h-[150px] items-center justify-center border-b border-slate-200 px-8">
               <img
                 src={campeLogo}
                 alt="CampE Technologies"
-                className="block h-auto w-[300px] object-contain sm:w-[360px]"
+                className="block h-auto w-[280px] object-contain invert sm:w-[340px]"
               />
 
               <button
                 type="button"
                 onClick={onClose}
-                className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 text-white/80 transition hover:border-cyan-400/40 hover:text-white"
+                className="absolute right-8 top-8 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-slate-400 hover:text-slate-900"
                 aria-label="Close consultation request panel"
               >
                 X
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-6 py-7 sm:px-8 sm:py-8">
-              <div className="mx-auto w-full max-w-[620px]">
+            <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-8 sm:py-7">
+              <div className="mx-auto w-full max-w-[560px]">
                 <h2
                   id="consultation-panel-title"
-                  className="text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.1rem]"
+                  className="text-2xl font-semibold leading-tight text-slate-950 sm:text-[1.9rem]"
                 >
                   Request a systems review
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-white/62 sm:text-[15px]">
+                <p className="mt-3 text-sm leading-6 text-slate-600">
                   Share the operating issue, reporting gap, or governance concern
                   you want CampE to review.
                 </p>
 
-                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div>
                   <label htmlFor="consultation-full-name" className={labelBase}>
                     Full name
@@ -258,13 +258,13 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
                     name="concern"
                     value={form.concern}
                     onChange={handleChange}
-                    className="w-full rounded-md border border-white/15 bg-slate-900 px-3.5 py-3 text-sm text-white outline-none transition focus:border-cyan-300/70 focus:ring-2 focus:ring-cyan-300/20"
+                    className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
                   >
                     {concerns.map((concern) => (
                       <option
                         key={concern}
                         value={concern}
-                        className="bg-slate-950 text-white"
+                        className="bg-white text-slate-950"
                       >
                         {concern}
                       </option>
@@ -301,31 +301,31 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
                   />
                 </div>
 
-                <div className="mt-8 flex flex-col items-center gap-4">
+                <div className="mt-6 flex flex-col items-center gap-3">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex min-h-[56px] w-full max-w-[420px] items-center justify-center rounded-2xl bg-white px-8 text-base font-semibold text-slate-950 transition hover:bg-cyan-50 disabled:cursor-not-allowed disabled:opacity-70"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center rounded-lg bg-[#07111f] px-6 text-sm font-semibold text-white transition hover:bg-[#0b1728] disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     {isSubmitting
                       ? 'Submitting request...'
-                      : 'Prepare consultation request'}
+                      : 'Submit consultation request'}
                   </button>
 
                   {submitStatus && (
                     <p
                       role={submitStatus.type === 'error' ? 'alert' : 'status'}
-                      className={`mx-auto max-w-[560px] rounded-2xl border px-5 py-4 text-center text-sm leading-6 ${
+                      className={`w-full rounded-lg border px-4 py-3 text-sm leading-6 ${
                         submitStatus.type === 'success'
-                          ? 'border-cyan-300/20 bg-cyan-300/10 text-cyan-50'
-                          : 'border-red-300/25 bg-red-400/10 text-red-100'
+                          ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                          : 'border-red-200 bg-red-50 text-red-900'
                       }`}
                     >
                       {submitStatus.message}
                     </p>
                   )}
 
-                  <p className="max-w-[520px] text-center text-sm leading-6 text-white/45">
+                  <p className="text-center text-sm leading-6 text-slate-500">
                     This prepares your consultation request. CampE will review the
                     details before confirming the next step.
                   </p>

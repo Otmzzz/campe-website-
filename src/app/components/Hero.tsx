@@ -12,32 +12,28 @@ export function Hero() {
     {
       src: powerbiLogo,
       label: 'Power BI',
-      position:
-        'left-[8%] top-[18%] h-20 sm:left-[13%] sm:top-[16%] sm:h-24 lg:h-32',
+      size: 'w-16 sm:w-20 md:w-24 lg:w-28',
       imageClass: 'drop-shadow-[0_22px_48px_rgba(250,204,21,0.18)]',
       delay: 0,
     },
     {
       src: azureLogo,
       label: 'Microsoft Azure',
-      position:
-        'right-[9%] top-[20%] h-16 sm:right-[14%] sm:top-[15%] sm:h-20 lg:h-28',
+      size: 'w-28 sm:w-32 md:w-40 lg:w-48',
       imageClass: 'drop-shadow-[0_22px_48px_rgba(56,189,248,0.2)]',
       delay: 0.35,
     },
     {
       src: awsLogo,
       label: 'AWS',
-      position:
-        'bottom-[17%] left-[14%] h-14 sm:bottom-[18%] sm:left-[24%] sm:h-16 lg:h-24',
+      size: 'w-20 sm:w-24 md:w-28 lg:w-36',
       imageClass: 'brightness-0 invert opacity-85',
       delay: 0.7,
     },
     {
       src: fortinetLogo,
       label: 'Fortinet',
-      position:
-        'bottom-[18%] right-[8%] h-10 w-[170px] sm:right-[18%] sm:h-12 sm:w-[230px] lg:h-16 lg:w-[300px]',
+      size: 'w-36 sm:w-44 md:w-56 lg:w-72',
       imageClass: 'brightness-0 invert opacity-82',
       delay: 1.05,
     },
@@ -56,35 +52,37 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] max-w-[1360px] flex-col justify-center px-5 pb-16 sm:px-8 lg:px-10">
         <Reveal>
-          <div className="relative mx-auto h-[300px] w-full max-w-[1180px] overflow-hidden sm:h-[360px] lg:h-[430px]">
+          <div className="relative mx-auto w-full max-w-[1180px] overflow-hidden py-12 sm:py-14 lg:py-16">
             <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-cyan-100/20 to-transparent" />
             <div className="absolute inset-y-8 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
             <div className="absolute inset-x-0 top-1/3 h-1/2 bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.1),rgba(59,130,246,0.08),transparent)]" />
 
-            {logoVisuals.map((logo) => (
-              <motion.img
-                key={logo.label}
-                src={logo.src}
-                alt={logo.label}
-                className={`absolute w-auto object-contain ${logo.position} ${logo.imageClass}`}
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: logo.delay,
-                }}
-              />
-            ))}
+            <div className="relative z-10 mx-auto grid max-w-[360px] grid-cols-2 items-center justify-items-center gap-x-8 gap-y-8 sm:flex sm:max-w-[760px] sm:flex-wrap sm:justify-center sm:gap-x-12 sm:gap-y-9 lg:max-w-[1040px] lg:gap-x-16">
+              {logoVisuals.map((logo) => (
+                <motion.img
+                  key={logo.label}
+                  src={logo.src}
+                  alt={logo.label}
+                  className={`max-h-20 object-contain sm:max-h-24 lg:max-h-32 ${logo.size} ${logo.imageClass}`}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: logo.delay,
+                  }}
+                />
+              ))}
+            </div>
 
-            <div className="absolute inset-x-[7%] bottom-8 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent sm:bottom-10" />
-            <p className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-100/62 sm:bottom-4">
+            <div className="relative z-10 mx-auto mt-10 h-px max-w-[86%] bg-gradient-to-r from-transparent via-white/18 to-transparent sm:mt-12" />
+            <p className="relative z-10 mt-5 text-center text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-100/62 sm:mt-6">
               Business systems and governance consulting
             </p>
           </div>
         </Reveal>
 
-        <div className="mx-auto mt-4 max-w-5xl text-center sm:mt-6 lg:mt-4">
+        <div className="mx-auto mt-8 max-w-5xl text-center sm:mt-10 lg:mt-8">
           <Reveal delay={0.08}>
             <h1 className="mx-auto max-w-4xl text-[2.35rem] font-semibold leading-tight tracking-[-0.01em] text-white sm:text-5xl md:text-[3.5rem] lg:text-[3.85rem]">
               Turning operational complexity into controlled systems.
