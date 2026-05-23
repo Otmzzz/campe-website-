@@ -15,7 +15,7 @@ const marqueeLogos = [...techLogos, ...techLogos];
 
 export function TechMotionStrip() {
   return (
-    <section className="overflow-hidden border-y border-slate-200 bg-white py-20 text-[#07111f] sm:py-24">
+    <section className="overflow-hidden border-y border-slate-200 bg-white py-20 text-[#07111f] md:py-24">
       <p className="mb-12 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
         Technology and systems execution stack
       </p>
@@ -25,7 +25,7 @@ export function TechMotionStrip() {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent sm:w-32" />
 
         <motion.div
-          className="flex w-max items-center gap-16 sm:gap-20 lg:gap-24"
+          className="flex w-max items-center gap-14 md:gap-20 lg:gap-24"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
             duration: 34,
@@ -38,7 +38,7 @@ export function TechMotionStrip() {
               key={`${logo.alt}-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className="h-12 w-auto shrink-0 object-contain opacity-95 transition duration-300 hover:scale-105 hover:opacity-100 sm:h-14 lg:h-20"
+              className="h-16 w-auto shrink-0 object-contain opacity-95 transition duration-300 hover:scale-105 hover:opacity-100 md:h-20 lg:h-24"
             />
           ))}
         </motion.div>
