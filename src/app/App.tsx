@@ -11,6 +11,9 @@ import { Industries } from './components/Industries';
 import { Testimonials } from './components/Testimonials';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { AboutCampE } from './pages/AboutCampE';
+import { AboutFounder } from './pages/AboutFounder';
+import { MissionVision } from './pages/MissionVision';
 import { BusinessClaritySystems } from './pages/BusinessClaritySystems';
 import { CloudITAdvisory } from './pages/CloudITAdvisory';
 import { ControlDashboards } from './pages/ControlDashboards';
@@ -21,6 +24,9 @@ import { RiskVisibility } from './pages/RiskVisibility';
 import { SystemsArchitecture } from './pages/SystemsArchitecture';
 
 const routes = {
+  '/about': AboutCampE,
+  '/about/founder': AboutFounder,
+  '/about/mission-vision': MissionVision,
   '/services/power-bi-development': PowerBIService,
   '/services/governance-control-review': GovernanceControlReview,
   '/services/cloud-it-advisory': CloudITAdvisory,
