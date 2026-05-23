@@ -45,7 +45,7 @@ export default function App() {
   const closeConsultationPanel = () => setIsConsultationPanelOpen(false);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#07111f] text-white">
+    <div className="min-h-screen overflow-x-hidden bg-white text-[#07111f]">
       <ScrollProgress />
       <CursorGlow />
       <Navbar onConsultationClick={openConsultationPanel} />

@@ -103,7 +103,7 @@ function DashboardCarousel() {
         </div>
       </div>
 
-      <p className="mt-4 max-w-4xl text-[12px] leading-6 text-slate-400">
+      <p className="mt-4 max-w-4xl text-[12px] leading-6 text-slate-500">
         Temporary visual references only. Images are sourced from publicly
         available Google Images and will be replaced with actual CampE Power BI
         dashboard samples.
@@ -115,19 +115,19 @@ function DashboardCarousel() {
 export function PowerBIService() {
   return (
     <main className="relative">
-      <section className="relative overflow-hidden border-b border-white/10 bg-[#06101d] pt-40 sm:pt-44 lg:pt-48">
-        <div className="absolute inset-x-0 top-0 h-px bg-cyan-200/30" />
+      <section className="relative overflow-hidden border-b border-slate-200 bg-white pt-40 sm:pt-44 lg:pt-48">
+        <div className="absolute inset-x-0 top-0 h-px bg-cyan-200" />
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 pb-20 sm:px-7 lg:max-w-[1320px] lg:grid-cols-[minmax(360px,0.74fr)_minmax(0,1.36fr)] lg:items-center lg:gap-10 lg:px-10 lg:pb-24 xl:max-w-[1380px]">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
               CAMPE SERVICE LINE
             </p>
 
-            <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[56px]">
+            <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[56px]">
               Power BI Development for Operational Control
             </h1>
 
-            <p className="mt-7 max-w-3xl text-[17px] leading-8 text-slate-300 sm:text-[18px]">
+            <p className="mt-7 max-w-3xl text-[17px] leading-8 text-slate-600 sm:text-[18px]">
               CampE builds Power BI reporting systems that help leadership see
               sales, inventory, workflow, and performance issues before they
               become hidden operational problems.
@@ -140,17 +140,17 @@ export function PowerBIService() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#07111f]">
+      <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto grid max-w-[1240px] gap-10 px-5 py-16 sm:px-7 lg:grid-cols-[0.72fr_1.28fr] lg:px-10 lg:py-20">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700/75">
             The Problem
           </p>
 
           <div>
-            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
+            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-[2.25rem]">
               Data exists. Control is still missing.
             </h2>
-            <p className="mt-6 max-w-3xl text-[16px] leading-8 text-slate-300">
+            <p className="mt-6 max-w-3xl text-[16px] leading-8 text-slate-600">
               Many businesses already have data from Excel, POS, Shopify,
               accounting files, receiving reports, and manual trackers. The
               problem is not always a lack of information. It is that leadership
@@ -161,32 +161,32 @@ export function PowerBIService() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#081625]">
+      <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700/75">
               CampE Approach
             </p>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-[2.25rem]">
               From scattered sources to a usable review system.
             </h2>
-            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+            <p className="mt-6 text-[16px] leading-8 text-slate-600">
               We begin with the way decisions are actually made, then work back
               into the data structure, refresh logic, and dashboard pages needed
               to support that review rhythm.
             </p>
           </div>
 
-          <div className="mt-10 max-w-4xl border-t border-white/10">
+          <div className="mt-10 max-w-4xl border-t border-slate-200">
             {approachItems.map((item, index) => (
               <div
                 key={item}
-                className="flex flex-col gap-2 border-b border-white/10 py-5 sm:flex-row sm:items-baseline sm:gap-8"
+                className="flex flex-col gap-2 border-b border-slate-200 py-5 sm:flex-row sm:items-baseline sm:gap-8"
               >
-                <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-cyan-200/60 sm:w-16">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-cyan-700/70 sm:w-16">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="text-[15px] font-semibold text-slate-100">
+                <span className="text-[15px] font-semibold text-slate-800">
                   {item}
                 </span>
               </div>
@@ -195,27 +195,27 @@ export function PowerBIService() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#07111f]">
+      <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700/75">
               Deliverables
             </p>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-[2.25rem]">
               Practical assets your team can review and maintain.
             </h2>
-            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+            <p className="mt-6 text-[16px] leading-8 text-slate-600">
               Each engagement is shaped around the dashboards, definitions, and
               handover material your team needs to keep reporting useful after
               launch.
             </p>
           </div>
 
-          <div className="mt-10 max-w-4xl border-t border-white/10">
+          <div className="mt-10 max-w-4xl border-t border-slate-200">
             {deliverables.map((item) => (
               <div
                 key={item}
-                className="border-b border-white/10 py-5 text-[15px] font-semibold text-slate-100"
+                className="border-b border-slate-200 py-5 text-[15px] font-semibold text-slate-800"
               >
                 {item}
               </div>
@@ -224,32 +224,32 @@ export function PowerBIService() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#081625]">
+      <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
           <div className="max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700/75">
               Best Fit
             </p>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-[2.25rem]">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-[2.25rem]">
               Built for teams that need clearer operating signals.
             </h2>
-            <p className="mt-6 text-[16px] leading-8 text-slate-300">
+            <p className="mt-6 text-[16px] leading-8 text-slate-600">
               This service is strongest where day-to-day activity already
               produces useful data, but management still depends on manual
               consolidation or delayed reporting.
             </p>
           </div>
 
-          <div className="mt-10 max-w-4xl border-t border-white/10">
+          <div className="mt-10 max-w-4xl border-t border-slate-200">
             {bestFit.map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-between gap-6 border-b border-white/10 py-5"
+                className="flex items-center justify-between gap-6 border-b border-slate-200 py-5"
               >
-                <span className="text-[15px] font-semibold text-slate-100">
+                <span className="text-[15px] font-semibold text-slate-800">
                   {item}
                 </span>
-                <ArrowRight size={16} className="shrink-0 text-cyan-200/70" />
+                <ArrowRight size={16} className="shrink-0 text-cyan-700/70" />
               </div>
             ))}
           </div>

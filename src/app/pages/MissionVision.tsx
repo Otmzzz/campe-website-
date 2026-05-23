@@ -1,24 +1,24 @@
 export function MissionVision() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#07111f] text-white">
-      <div className="absolute inset-0 bg-[linear-gradient(140deg,#06101d_0%,#07111f_54%,#10243d_100%)]" />
-      <div className="absolute inset-0 opacity-[0.035]">
-        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:72px_72px]" />
+    <main className="relative min-h-screen overflow-hidden bg-white text-[#07111f]">
+      <div className="absolute inset-0 bg-[linear-gradient(140deg,#ffffff_0%,#f8fbfd_54%,#ecfeff_100%)]" />
+      <div className="absolute inset-0 opacity-[0.04]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:72px_72px]" />
       </div>
 
       <section className="relative z-10 px-5 pb-24 pt-40 sm:px-8 sm:pt-44 lg:px-10 lg:pb-32 lg:pt-48">
         <div className="mx-auto max-w-[860px]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
             Mission & Vision
           </p>
 
-          <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.65rem]">
+          <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.65rem]">
             Measurable answers for organizations facing complexity and change.
           </h1>
 
-          <div className="mt-12 space-y-12 text-[17px] leading-9 text-slate-300">
+          <div className="mt-12 space-y-12 text-[17px] leading-9 text-slate-600">
             <section>
-              <h2 className="text-2xl font-semibold leading-tight text-white">
+              <h2 className="text-2xl font-semibold leading-tight text-[#07111f]">
                 Our Vision
               </h2>
 
@@ -31,7 +31,7 @@ export function MissionVision() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold leading-tight text-white">
+              <h2 className="text-2xl font-semibold leading-tight text-[#07111f]">
                 Mission Statement
               </h2>
 
@@ -50,7 +50,7 @@ export function MissionVision() {
               </p>
             </section>
 
-            <p className="text-xl font-semibold leading-9 text-white">
+            <p className="text-xl font-semibold leading-9 text-[#07111f]">
               Turning operational complexity into controlled systems.
             </p>
           </div>

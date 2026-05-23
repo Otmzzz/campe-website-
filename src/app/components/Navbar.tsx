@@ -250,6 +250,20 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
           {/* DESKTOP RIGHT ACTIONS */}
           <div className="hidden items-center gap-6 lg:flex">
             <a
+              href="https://www.facebook.com/campecomputing"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden items-center gap-2 text-sm font-medium text-slate-200/80 transition hover:text-cyan-100 lg:inline-flex"
+            >
+              <img
+                src="/social/FACEBOOK.jpg"
+                alt="Facebook"
+                className="h-4 w-4 rounded-full object-contain"
+              />
+              <span>Follow us</span>
+            </a>
+
+            <a
               href="/"
               className="text-[13px] font-medium text-white/68 transition hover:text-cyan-100"
             >

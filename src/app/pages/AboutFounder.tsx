@@ -1,23 +1,23 @@
 export function AboutFounder() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#07111f] text-white">
-      <div className="absolute inset-0 bg-[linear-gradient(140deg,#06101d_0%,#07111f_54%,#10243d_100%)]" />
-      <div className="absolute inset-0 opacity-[0.035]">
-        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:72px_72px]" />
+    <main className="relative min-h-screen overflow-hidden bg-white text-[#07111f]">
+      <div className="absolute inset-0 bg-[linear-gradient(140deg,#ffffff_0%,#f8fbfd_54%,#ecfeff_100%)]" />
+      <div className="absolute inset-0 opacity-[0.04]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:72px_72px]" />
       </div>
 
       <section className="relative z-10 px-5 pb-24 pt-40 sm:px-8 sm:pt-44 lg:px-10 lg:pb-32 lg:pt-48">
         <div className="mx-auto max-w-[880px]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
             About the Founder
           </p>
 
-          <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.65rem]">
+          <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl lg:text-[3.65rem]">
             Built through decades of systems leadership and operational
             discipline.
           </h1>
 
-          <p className="mt-8 text-xl leading-9 text-slate-200">
+          <p className="mt-8 text-xl leading-9 text-slate-700">
             The founder behind CampE Technologies is a seasoned business systems
             and transformation leader with more than three decades of experience
             spanning operational leadership, retail technology distribution,
@@ -25,7 +25,7 @@ export function AboutFounder() {
             organizational growth.
           </p>
 
-          <div className="mt-12 space-y-8 text-[17px] leading-9 text-slate-300">
+          <div className="mt-12 space-y-8 text-[17px] leading-9 text-slate-600">
             <p>
               This background was shaped through years of leading complex
               business environments where control, visibility, and structured
@@ -72,7 +72,7 @@ export function AboutFounder() {
               within evolving business environments.
             </p>
 
-            <p className="border-l-2 border-cyan-300/70 pl-6 text-xl font-medium leading-9 text-white">
+            <p className="border-l-2 border-cyan-400 pl-6 text-xl font-medium leading-9 text-[#07111f]">
               Complexity should be structured into clarity — so leaders can move
               with stronger control, confidence, and visibility.
             </p>
