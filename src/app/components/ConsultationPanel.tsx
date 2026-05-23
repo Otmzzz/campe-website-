@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
+import { Calendar } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { supabase } from '../lib/supabaseClient';
 import campeLogo from '../assets/logos/campe-technologies.png';
@@ -38,7 +39,7 @@ const initialForm: ConsultationForm = {
   email: '',
   organization: '',
   contactNumber: '',
-  concern: concerns[0],
+  concern: '',
   preferredDate: '',
   message: '',
 };
@@ -49,6 +50,7 @@ const fieldBase =
 const labelBase = 'mb-2 block text-sm font-medium text-slate-700';
 
 export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
+  const preferredDateRef = useRef<HTMLInputElement | null>(null);
   const [form, setForm] = useState<ConsultationForm>(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
@@ -83,6 +85,18 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
       ...current,
       [event.target.name]: event.target.value,
     }));
+  };
+
+  const openPreferredDatePicker = () => {
+    const input = preferredDateRef.current;
+    if (!input) return;
+
+    if (typeof input.showPicker === 'function') {
+      input.showPicker();
+    } else {
+      input.focus();
+      input.click();
+    }
   };
 
   const handleSubmit = async (event: FormEvent) => {
@@ -258,8 +272,12 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
                     name="concern"
                     value={form.concern}
                     onChange={handleChange}
+                    required
                     className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
                   >
+                    <option value="" disabled className="bg-white text-slate-400">
+                      Select area of concern
+                    </option>
                     {concerns.map((concern) => (
                       <option
                         key={concern}
@@ -276,14 +294,27 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
                   <label htmlFor="consultation-preferred-date" className={labelBase}>
                     Preferred date
                   </label>
-                  <input
-                    id="consultation-preferred-date"
-                    name="preferredDate"
-                    value={form.preferredDate}
-                    onChange={handleChange}
-                    type="date"
-                    className={fieldBase}
-                  />
+                  <div
+                    className="relative"
+                    onClick={openPreferredDatePicker}
+                  >
+                    <input
+                      ref={preferredDateRef}
+                      id="consultation-preferred-date"
+                      type="date"
+                      name="preferredDate"
+                      value={form.preferredDate}
+                      onChange={handleChange}
+                      onKeyDown={(event) => event.preventDefault()}
+                      onPaste={(event) => event.preventDefault()}
+                      required
+                      className="w-full cursor-pointer rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 pr-14 text-slate-900 outline-none transition focus:border-cyan-400 focus:bg-white focus:ring-2 focus:ring-cyan-100 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-5 [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:w-10 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-0"
+                    />
+
+                    <Calendar
+                      className="pointer-events-none absolute right-5 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-700"
+                    />
+                  </div>
                 </div>
 
                 <div>
