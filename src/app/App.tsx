@@ -9,7 +9,7 @@ import { WhyCampE } from './components/WhyCampE';
 import { Solutions } from './components/Solutions';
 import { Industries } from './components/Industries';
 import { Testimonials } from './components/Testimonials';
-import { FinalCTA } from './components/FinalCTA';
+import { TechMotionStrip } from './components/TechMotionStrip';
 import { Footer } from './components/Footer';
 import { AboutCampE } from './pages/AboutCampE';
 import { AboutFounder } from './pages/AboutFounder';
@@ -59,9 +59,9 @@ export default function App() {
           <WhyCampE />
           <Industries />
           <Testimonials />
+          <TechMotionStrip />
         </>
       )}
-      <FinalCTA onConsultationClick={openConsultationPanel} />
       <Footer />
       <ConsultationPanel
         isOpen={isConsultationPanelOpen}
