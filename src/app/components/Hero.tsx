@@ -1,43 +1,53 @@
-import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Reveal } from './Reveal';
 
-import powerbiLogo from '../assets/logos/powerbi.svg';
-import azureLogo from '../assets/logos/azure.svg';
-import awsLogo from '../assets/logos/aws.svg';
-import fortinetLogo from '../assets/logos/fortinet.svg';
+const serviceSlides = [
+  {
+    src: '/services/PM-1.png',
+    title: 'Business Intelligence',
+    description: 'Dashboards, analytics, and clearer decision visibility.',
+  },
+  {
+    src: '/services/PM-2.png',
+    title: 'Cloud Infrastructure',
+    description: 'Cloud control, deployment structure, and IT governance support.',
+  },
+  {
+    src: '/services/PM-3.png',
+    title: 'AI Integration',
+    description: 'Applied AI and workflow automation aligned with real operations.',
+  },
+  {
+    src: '/services/PM-4.png',
+    title: 'Governance & Systems',
+    description:
+      'Process control, accountability, and structured operating visibility.',
+  },
+];
 
 export function Hero() {
-  const logoVisuals = [
-    {
-      src: powerbiLogo,
-      label: 'Power BI',
-      size: 'w-16 sm:w-20 md:w-24 lg:w-28',
-      imageClass: 'drop-shadow-[0_22px_48px_rgba(250,204,21,0.18)]',
-      delay: 0,
-    },
-    {
-      src: azureLogo,
-      label: 'Microsoft Azure',
-      size: 'w-28 sm:w-32 md:w-40 lg:w-48',
-      imageClass: 'drop-shadow-[0_22px_48px_rgba(56,189,248,0.2)]',
-      delay: 0.35,
-    },
-    {
-      src: awsLogo,
-      label: 'AWS',
-      size: 'w-20 sm:w-24 md:w-28 lg:w-36',
-      imageClass: 'opacity-80',
-      delay: 0.7,
-    },
-    {
-      src: fortinetLogo,
-      label: 'Fortinet',
-      size: 'w-36 sm:w-44 md:w-56 lg:w-72',
-      imageClass: 'opacity-80',
-      delay: 1.05,
-    },
-  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const activeSlide = serviceSlides[currentSlide];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCurrentSlide((slide) => (slide + 1) % serviceSlides.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const showPreviousSlide = () => {
+    setCurrentSlide(
+      (slide) => (slide - 1 + serviceSlides.length) % serviceSlides.length,
+    );
+  };
+
+  const showNextSlide = () => {
+    setCurrentSlide((slide) => (slide + 1) % serviceSlides.length);
+  };
 
   return (
     <section
@@ -50,39 +60,98 @@ export function Hero() {
         <div className="h-full w-full bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:72px_72px] opacity-[0.035]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] max-w-[1360px] flex-col justify-center px-5 pb-16 sm:px-8 lg:px-10">
+      <div className="relative z-10 flex min-h-[calc(100vh-96px)] flex-col justify-center pb-16">
         <Reveal>
-          <div className="relative mx-auto w-full max-w-[1180px] overflow-hidden py-12 sm:py-14 lg:py-16">
-            <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
-            <div className="absolute inset-y-8 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-slate-300/40 to-transparent" />
-            <div className="absolute inset-x-0 top-1/3 h-1/2 bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.12),rgba(59,130,246,0.08),transparent)]" />
+          <>
+            <div className="relative w-full max-w-none overflow-hidden bg-white px-0">
+              <div className="relative h-[360px] w-full overflow-hidden rounded-none md:h-[480px] lg:h-[560px] xl:h-[620px]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeSlide.src}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.015 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.995 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <img
+                      src={activeSlide.src}
+                      alt={activeSlide.title}
+                      className="h-full w-full object-cover object-[center_40%]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/25 to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
 
-            <div className="relative z-10 mx-auto grid max-w-[360px] grid-cols-2 items-center justify-items-center gap-x-8 gap-y-8 sm:flex sm:max-w-[760px] sm:flex-wrap sm:justify-center sm:gap-x-12 sm:gap-y-9 lg:max-w-[1040px] lg:gap-x-16">
-              {logoVisuals.map((logo) => (
-                <motion.img
-                  key={logo.label}
-                  src={logo.src}
-                  alt={logo.label}
-                  className={`max-h-20 object-contain sm:max-h-24 lg:max-h-32 ${logo.size} ${logo.imageClass}`}
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{
-                    duration: 7,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: logo.delay,
-                  }}
-                />
-              ))}
+                <div className="pointer-events-none absolute inset-y-0 left-0 z-20 flex w-full items-center justify-between px-4 md:px-6 lg:px-8">
+                  <button
+                    type="button"
+                    onClick={showPreviousSlide}
+                    aria-label="Show previous service"
+                    className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/45 bg-white/85 text-[#07111f] shadow-lg shadow-slate-950/10 backdrop-blur transition hover:bg-white sm:h-12 sm:w-12"
+                  >
+                    <ChevronLeft size={24} strokeWidth={1.8} />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={showNextSlide}
+                    aria-label="Show next service"
+                    className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/45 bg-white/85 text-[#07111f] shadow-lg shadow-slate-950/10 backdrop-blur transition hover:bg-white sm:h-12 sm:w-12"
+                  >
+                    <ChevronRight size={24} strokeWidth={1.8} />
+                  </button>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 z-10 p-5 text-white sm:p-8 lg:p-10">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeSlide.title}
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                      className="max-w-xl"
+                    >
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-100/85">
+                        Service Capability
+                      </p>
+                      <h2 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
+                        {activeSlide.title}
+                      </h2>
+                      <p className="mt-3 max-w-lg text-sm leading-6 text-white/82 sm:text-base">
+                        {activeSlide.description}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+
+                  <div className="mt-6 flex gap-2">
+                    {serviceSlides.map((slide, index) => (
+                      <button
+                        key={slide.title}
+                        type="button"
+                        onClick={() => setCurrentSlide(index)}
+                        aria-label={`Show ${slide.title}`}
+                        className={`h-1.5 rounded-full transition-all ${
+                          currentSlide === index
+                            ? 'w-8 bg-white'
+                            : 'w-3 bg-white/45 hover:bg-white/70'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="relative z-10 mx-auto mt-10 h-px max-w-[86%] bg-gradient-to-r from-transparent via-slate-300 to-transparent sm:mt-12" />
+            <div className="relative z-10 mx-auto mt-8 h-px max-w-[86%] bg-gradient-to-r from-transparent via-slate-300 to-transparent sm:mt-10" />
             <p className="relative z-10 mt-5 text-center text-[11px] font-medium uppercase tracking-[0.16em] text-cyan-800/70 sm:mt-6">
               Business systems and governance consulting
             </p>
-          </div>
+          </>
         </Reveal>
 
-        <div className="mx-auto mt-8 max-w-5xl text-center sm:mt-10 lg:mt-8">
+        <div className="mx-auto mt-8 max-w-5xl px-5 text-center sm:mt-10 sm:px-8 lg:mt-8 lg:px-10">
           <Reveal delay={0.08}>
             <h1 className="mx-auto max-w-4xl text-[2.35rem] font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl md:text-[3.5rem] lg:text-[3.85rem]">
               Turning operational complexity into controlled systems.
