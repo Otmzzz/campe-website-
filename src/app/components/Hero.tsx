@@ -5,25 +5,29 @@ import { Reveal } from './Reveal';
 
 const serviceSlides = [
   {
-    src: '/services/PM-1.png',
+    image: '/services/PM-1.png',
     title: 'Business Intelligence',
     description: 'Dashboards, analytics, and clearer decision visibility.',
+    objectPosition: 'center 42%',
   },
   {
-    src: '/services/PM-2.png',
+    image: '/services/PM-2.png',
     title: 'Cloud Infrastructure',
     description: 'Cloud control, deployment structure, and IT governance support.',
+    objectPosition: 'center 40%',
   },
   {
-    src: '/services/PM-3.png',
+    image: '/services/PM-3.png',
     title: 'AI Integration',
     description: 'Applied AI and workflow automation aligned with real operations.',
+    objectPosition: 'center 38%',
   },
   {
-    src: '/services/PM-4.png',
+    image: '/services/PM-4.png',
     title: 'Governance & Systems',
     description:
       'Process control, accountability, and structured operating visibility.',
+    objectPosition: 'center 40%',
   },
 ];
 
@@ -64,10 +68,10 @@ export function Hero() {
         <Reveal>
           <>
             <div className="relative w-full max-w-none overflow-hidden bg-white px-0">
-              <div className="relative h-[360px] w-full overflow-hidden rounded-none md:h-[480px] lg:h-[560px] xl:h-[620px]">
+              <div className="relative h-[260px] w-full overflow-hidden rounded-none md:h-[340px] lg:h-[420px] xl:h-[460px]">
                 <AnimatePresence mode="wait">
                   <motion.div
-                    key={activeSlide.src}
+                    key={activeSlide.image}
                     className="absolute inset-0"
                     initial={{ opacity: 0, scale: 1.015 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -75,9 +79,10 @@ export function Hero() {
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <img
-                      src={activeSlide.src}
+                      src={activeSlide.image}
                       alt={activeSlide.title}
-                      className="h-full w-full object-cover object-[center_40%]"
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: activeSlide.objectPosition }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/25 to-transparent" />
                   </motion.div>
@@ -116,10 +121,10 @@ export function Hero() {
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-100/85">
                         Service Capability
                       </p>
-                      <h2 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
+                      <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-3xl">
                         {activeSlide.title}
                       </h2>
-                      <p className="mt-3 max-w-lg text-sm leading-6 text-white/82 sm:text-base">
+                      <p className="mt-3 max-w-lg text-sm leading-6 text-white/82 md:text-base">
                         {activeSlide.description}
                       </p>
                     </motion.div>
