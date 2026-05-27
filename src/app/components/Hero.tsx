@@ -5,29 +5,33 @@ import { Reveal } from './Reveal';
 
 const serviceSlides = [
   {
-    image: '/services/PM-1.png',
+    image: '/services/AM-3.jpeg',
     title: 'Business Intelligence',
     description: 'Dashboards, analytics, and clearer decision visibility.',
-    objectPosition: 'center 42%',
+    desktopPosition: 'center 20%',
+    mobilePosition: 'center 18%',
   },
   {
-    image: '/services/PM-2.png',
+    image: '/services/AM-2.jpeg',
     title: 'Cloud Infrastructure',
     description: 'Cloud control, deployment structure, and IT governance support.',
-    objectPosition: 'center 40%',
+    desktopPosition: 'center 14%',
+    mobilePosition: 'center 12%',
   },
   {
-    image: '/services/PM-3.png',
+    image: '/services/AM-1.jpeg',
     title: 'AI Integration',
     description: 'Applied AI and workflow automation aligned with real operations.',
-    objectPosition: 'center 38%',
+    desktopPosition: 'center 22%',
+    mobilePosition: 'center 18%',
   },
   {
-    image: '/services/PM-4.png',
+    image: '/services/PM-1.png',
     title: 'Governance & Systems',
     description:
       'Process control, accountability, and structured operating visibility.',
-    objectPosition: 'center 40%',
+    desktopPosition: 'center 20%',
+    mobilePosition: 'center 18%',
   },
 ];
 
@@ -81,8 +85,14 @@ export function Hero() {
                     <img
                       src={activeSlide.image}
                       alt={activeSlide.title}
-                      className="h-full w-full object-cover"
-                      style={{ objectPosition: activeSlide.objectPosition }}
+                      className="hidden h-full w-full object-cover md:block"
+                      style={{ objectPosition: activeSlide.desktopPosition }}
+                    />
+                    <img
+                      src={activeSlide.image}
+                      alt={activeSlide.title}
+                      className="h-full w-full object-cover md:hidden"
+                      style={{ objectPosition: activeSlide.mobilePosition }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/25 to-transparent" />
                   </motion.div>
