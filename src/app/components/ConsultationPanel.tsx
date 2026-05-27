@@ -110,20 +110,46 @@ export function ConsultationPanel({ isOpen, onClose }: ConsultationPanelProps) {
     setSubmitStatus(null);
 
     try {
-      const { error } = await supabase.from('consultation_requests').insert({
-        full_name: form.fullName.trim(),
+      const submittedPayload = {
+        fullName: form.fullName.trim(),
         email: form.email.trim(),
         organization: form.organization.trim() || null,
-        contact_number: form.contactNumber.trim() || null,
-        area_of_concern: form.concern,
-        preferred_date: form.preferredDate || null,
+        contactNumber: form.contactNumber.trim() || null,
+        concern: form.concern,
+        preferredDate: form.preferredDate || null,
         message: form.message.trim(),
-        source_page: window.location.pathname,
-      });
+        sourcePage: window.location.pathname,
+      };
+
+      const { error } = await supabase
+        .from('consultation_requests')
+        .insert({
+          full_name: submittedPayload.fullName,
+          email: submittedPayload.email,
+          organization: submittedPayload.organization,
+          contact_number: submittedPayload.contactNumber,
+          area_of_concern: submittedPayload.concern,
+          preferred_date: submittedPayload.preferredDate,
+          message: submittedPayload.message,
+          source_page: submittedPayload.sourcePage,
+        });
 
       if (error) {
         throw error;
       }
+
+      void supabase.functions
+        .invoke('send-consultation-email', {
+          body: submittedPayload,
+        })
+        .then(({ error: emailError }) => {
+          if (emailError) {
+            console.error('Consultation email notification failed:', emailError);
+          }
+        })
+        .catch((emailError) => {
+          console.error('Consultation email notification failed:', emailError);
+        });
 
       setSubmitStatus({
         type: 'success',
