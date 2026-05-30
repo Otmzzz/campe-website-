@@ -18,38 +18,41 @@ export function AboutCampE() {
 
           <div className="mt-12 space-y-8 text-[17px] leading-9 text-slate-600">
             <p>
-              CampE Technologies helps organizations turn operational complexity
-              into clearer, more controlled systems.
+              CampE Technologies is a business systems intelligence and applied
+              AI consultancy that helps organizations turn operational
+              complexity into clearer, more controlled systems.
             </p>
 
             <p>
-              As businesses and institutions grow, stronger workflows, clearer
-              reports, and better decision visibility become essential. CampE
-              supports this growth by improving structure, operational alignment,
-              and the way information moves across the organization.
+              As businesses and institutions grow, stronger workflows, better
+              reporting, and improved decision visibility become essential.
+              CampE supports this growth by helping leaders improve structure,
+              operational alignment, accountability, and the way information
+              moves across the organization.
             </p>
 
             <p>
               Through business intelligence, systems thinking,
               governance-centered reviews, process mapping, and practical
-              control frameworks, CampE helps leaders strengthen how processes
-              are monitored, how teams stay aligned, and how decisions are
-              supported by clearer operational visibility.
+              control frameworks, CampE helps organizations strengthen how
+              processes are monitored, how teams stay aligned, and how decisions
+              are supported by reliable operational visibility.
             </p>
 
             <p>
               CampE also supports practical digital execution through modern web
               and systems development. This includes business-focused website
               development, workflow tools, operational dashboards, process
-              visibility platforms, and digital solutions built using modern
-              development practices.
+              visibility platforms, and digital solutions built around real
+              business needs.
             </p>
 
             <p>
               By combining structured business systems thinking with modern
               development capability, CampE helps organizations improve
-              visibility, strengthen workflow control, support accountability,
-              and build solutions that align with real operational needs.
+              control, strengthen accountability, and build solutions that
+              support daily operations, management reporting, and long-term
+              growth.
             </p>
 
             <p>
