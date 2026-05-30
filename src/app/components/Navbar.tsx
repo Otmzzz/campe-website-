@@ -197,6 +197,11 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
     setActiveGroup(null);
   };
 
+  const handleMobileConsultationClick = () => {
+    closeMenu();
+    onConsultationClick();
+  };
+
   return (
     <>
       <nav
@@ -222,11 +227,11 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
         </div>
 
         {/* MAIN NAV */}
-        <div className="mx-auto flex h-[86px] max-w-[1440px] items-center justify-between px-5 sm:h-[90px] sm:px-7 lg:h-[92px] lg:px-10">
+        <div className="relative mx-auto flex h-[86px] max-w-[1440px] items-center justify-between px-5 sm:h-[90px] sm:px-7 lg:h-[92px] lg:px-10">
           {/* LEFT SIDE: HAMBURGER + BRAND */}
-          <div className="flex min-w-0 items-center gap-4 lg:gap-5">
+          <div className="flex w-full min-w-0 items-center justify-center lg:w-auto lg:justify-start lg:gap-5">
             <button
-              className="group -ml-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white/90 transition hover:bg-white/[0.06] hover:text-white sm:h-12 sm:w-12"
+              className="group absolute left-0 flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white/90 transition hover:bg-white/[0.06] hover:text-white sm:h-12 sm:w-12 lg:static lg:-ml-2"
               onClick={openMenu}
               aria-label="Open menu"
             >
@@ -279,14 +284,6 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
             </button>
           </div>
 
-          {/* MOBILE CTA */}
-          <button
-            type="button"
-            onClick={onConsultationClick}
-            className="hidden rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold text-[#06101d] shadow-md shadow-black/15 sm:inline-flex lg:hidden"
-          >
-            Consult
-          </button>
         </div>
 
         {/* CAMP-E ACCENT LINE */}
@@ -340,11 +337,48 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
                     CampE Navigation
                   </p>
 
+                  <div className="mb-8 space-y-3 lg:hidden">
+                    <a
+                      href="/"
+                      onClick={closeMenu}
+                      className="flex min-h-[54px] items-center justify-between rounded-lg border border-slate-200 bg-white px-4 text-[14px] font-semibold text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:border-cyan-200 hover:text-cyan-800"
+                    >
+                      <span>Home</span>
+                      <ArrowRight size={16} className="text-slate-400" />
+                    </a>
+
+                    <a
+                      href="https://www.facebook.com/campecomputing"
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={closeMenu}
+                      className="flex min-h-[54px] items-center justify-between rounded-lg border border-slate-200 bg-white px-4 text-[14px] font-semibold text-slate-800 shadow-sm shadow-slate-950/[0.03] transition hover:border-cyan-200 hover:text-cyan-800"
+                    >
+                      <span className="flex items-center gap-3">
+                        <img
+                          src="/social/FACEBOOK.jpg"
+                          alt="Facebook"
+                          className="h-5 w-5 rounded-full object-contain"
+                        />
+                        Follow us
+                      </span>
+                      <ArrowRight size={16} className="text-slate-400" />
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleMobileConsultationClick}
+                      className="flex min-h-[58px] w-full items-center justify-center rounded-full bg-[#06101d] px-5 text-[14px] font-semibold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-900"
+                    >
+                      Book Consultation
+                    </button>
+                  </div>
+
                   <div className="border-t border-slate-200">
                     <a
                       href="/"
                       onClick={closeMenu}
-                      className="group flex items-center justify-between border-b border-slate-200 py-5 text-left text-slate-700 transition hover:text-slate-950"
+                      className="group hidden items-center justify-between border-b border-slate-200 py-5 text-left text-slate-700 transition hover:text-slate-950 lg:flex"
                     >
                       <span>
                         <span className="block text-[16px] font-semibold uppercase tracking-[0.06em]">
