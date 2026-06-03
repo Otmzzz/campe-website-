@@ -242,7 +242,7 @@ export function Navbar({ onConsultationClick }: NavbarProps) {
             </button>
 
             <a href="/" className="flex shrink-0 items-center" onClick={closeMenu}>
-              <div className="w-[210px] -translate-y-0.5 sm:w-[285px] lg:w-[340px] lg:-translate-y-1 xl:w-[375px]">
+              <div className="w-[220px] -translate-y-1.5 sm:w-[300px] lg:w-[370px] lg:-translate-y-2 xl:w-[405px]">
                 <img
                   src={campeLogo}
                   alt="CampE Technologies"
