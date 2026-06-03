@@ -36,10 +36,21 @@ export function AboutFounder() {
             <p>
               Built from a strong foundation in structured systems thinking and
               data-driven business analysis, the founder developed expertise in
-              connecting business strategy with operational clarity. The work has
-              centered on helping organizations improve workflow visibility,
-              strengthen controls, optimize planning, and create more reliable
-              decision frameworks.
+              connecting business strategy with operational clarity. This
+              foundation traces back to formal computing studies in BS
+              Information & Computer Science, where early exposure to structured
+              programming, Boolean logic, COBOL-oriented thinking, and systems
+              analysis shaped a disciplined view of business processes as
+              connected transaction flows governed by rules, controls,
+              exceptions, and accountability points.
+            </p>
+
+            <p>
+              That systems foundation was later strengthened through modern
+              professional learning in Python programming and Google Data
+              Analytics, extending classic systems analysis into data
+              preparation, cleaning, analysis, visualization, automation, and
+              decision support.
             </p>
 
             <p>
@@ -78,9 +89,11 @@ export function AboutFounder() {
             </p>
 
             <p>
-              With a core discipline in systems analysis, business intelligence,
-              operational architecture, and governance-centered execution, CampE
-              Technologies was built around this principle.
+              With a layered discipline spanning leadership exposure, industry
+              operations, systems analysis, Python, data analytics, business
+              intelligence, applied AI, operational architecture, and
+              governance-centered execution, CampE Technologies was built around
+              this principle.
             </p>
 
             <p>
