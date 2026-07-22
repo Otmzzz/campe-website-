@@ -169,7 +169,7 @@ export function Hero() {
         <div className="mx-auto mt-8 max-w-5xl px-5 text-center sm:mt-10 sm:px-8 lg:mt-8 lg:px-10">
           <Reveal delay={0.08}>
             <h1 className="mx-auto max-w-4xl text-[2.35rem] font-semibold leading-tight tracking-[-0.01em] text-[#07111f] sm:text-5xl md:text-[3.5rem] lg:text-[3.85rem]">
-              Turning operational complexity into controlled systems.
+              Turning Business Complexity into Executive Clarity through Business Systems Intelligence and Applied AI.
             </h1>
           </Reveal>
 
